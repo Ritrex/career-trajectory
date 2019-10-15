@@ -34,15 +34,9 @@ const Seeker=new Schema({
   email:{
     type:String,
     required:true 
-  },
+  }
 
 },{timestamps:true})
 
-const CompanySchema=new Schema({
-  contact_emails:{
-    type:[Schema.Types.ObjectId],
-  },
-  
-})
 
 module.exports=model("User",UserSchema)

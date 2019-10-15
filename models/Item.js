@@ -10,11 +10,11 @@ const ItemSchema=new Schema({
   associated_categories:{
     type:[Schema.Types.ObjectId],
     required:true,
-    default[]
+    default:[]
   },
   price:{
     type:Number,
-    required:true,<
+    required:true,
     default:0
   }
 })

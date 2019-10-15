@@ -6,5 +6,5 @@ block navelements
 
 block body
   <h1>#{title}</h1>
-  <p>Welcome to #{title}</p>
-  p Yo
+  p=`Welcome ${user?user.name:`to ${title}`}`
+  
