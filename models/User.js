@@ -20,23 +20,6 @@ const UserSchema=new Schema({
 },{timestamps:true})
 
 
-const Seeker=new Schema({
-  userid={
-    type:Schema.Types.ObjectId,
-    required:true
-  },
-  skills:{
-    type:[mongoose.Schema.Types.ObjectId],
-    ref:"Skill",
-    required:true,
-    default:[]
-  },
-  email:{
-    type:String,
-    required:true 
-  }
-
-},{timestamps:true})
 
 
 module.exports=model("User",UserSchema)
