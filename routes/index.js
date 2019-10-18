@@ -1,10 +1,9 @@
-const express = require('express');
-const router  = express.Router();
-const User =require('../models/User')
-const Sale = require('../models/Sale')
-const passport=require('passport')
-const bcrypt=require('bcrypt')
-
+const express = require("express");
+const router = express.Router();
+const User = require("../models/User");
+const Sale = require("../models/Sale");
+const passport = require("passport");
+const bcrypt = require("bcryptjs");
 
 // passport.use(Sale.createStrategy())
 
@@ -12,10 +11,8 @@ const bcrypt=require('bcrypt')
 // app.use(passport.session());
 
 /* GET home page */
-router.get('/', (req, res, next) => {
-
-  res.render('index');
+router.get("/", (req, res, next) => {
+  res.render("index");
 });
-
 
 module.exports = router;
