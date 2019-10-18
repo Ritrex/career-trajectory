@@ -11,7 +11,7 @@ const path         = require('path');
 const passport     = require('passport')
 const passport_local = require('passport-local')
 const passport_local_mongoose=require('passport-local-mongoose')
-const MongoStore = require("connect-mongo")(session);
+//const MongoStore = require("connect-mongo")(session);
 
 
 
@@ -54,18 +54,18 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
 
-app.use(
-  session({
-    secret: process.env.SECRET,
-    cookie: { maxAge: 3600000 },
-    resave: true,
-    saveUninitialized: true,
-    store: new MongoStore({
-      mongooseConnection: mongoose.connection,
-      ttl: 24 * 60 * 60 // 1 day
-    })
-  })
-);
+// app.use(
+//   session({
+//     secret: process.env.SECRET,
+//     cookie: { maxAge: 3600000 },
+//     resave: true,
+//     saveUninitialized: true,
+//     store: new MongoStore({
+//       mongooseConnection: mongoose.connection,
+//       ttl: 24 * 60 * 60 // 1 day
+//     })
+//   })
+// );
 
 
 const index = require('./routes/index');

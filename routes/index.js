@@ -6,10 +6,10 @@ const passport=require('passport')
 const bcrypt=require('bcrypt')
 
 
-passport.use(Sale.createStrategy())
+// passport.use(Sale.createStrategy())
 
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 /* GET home page */
 router.get('/', (req, res, next) => {
