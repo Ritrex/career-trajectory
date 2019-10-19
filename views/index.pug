@@ -1,6 +1,89 @@
 extends layout
 block content
 
-  h1 #{title}
-  p=`Welcome ${user?user.name:`to ${title}`}`
+  .uk-position-relative.uk-visible-toggle.uk-light.uk-height-viewport(tabindex='-1' uk-slideshow='ratio: false;animation: push')
+    ul.uk-slideshow-items(uk-height-viewport="offset-top: true")
+      li
+        video(src='https://res.cloudinary.com/dr95kad7s/video/upload/v1571461370/slideshow-video-1.mp4' autoplay='' loop='' muted='' playsinline='' uk-cover='')
+        .uk-overlay-primary.uk-position-cover
+        .uk-position-center.uk-position-small.uk-text-center
+          h1(uk-slideshow-parallax='y: -50,0,0; opacity: 1,1,0') Es más fácil de lo que crees
+          p.uk-text-large.uk-margin-medium-bottom(uk-slideshow-parallax='y: 50,0,0; opacity: 1,1,0') Si no puedes ir, véndelo. Si te hace falta, cómpralo. Así de fácil.
+          form(action='POST' uk-slideshow-parallax='y: 150,0,0; opacity: 1,1,0')
+            fieldset.uk-fieldset
+              .uk-margin
+                .uk-inline
+                  a.uk-form-icon.uk-form-icon-flip(href='#' uk-icon='icon: search')
+                  input.uk-input.uk-form-width-large(type='text' placeholder='Conciertos, partidos, teatro, festivales y más...')
+
+
+      li
+        video(src='https://res.cloudinary.com/dr95kad7s/video/upload/v1571459104/slideshow-video-2.mp4' autoplay='' loop='' muted='' playsinline='' uk-cover='')
+        .uk-overlay-primary.uk-position-cover
+        .uk-position-center.uk-position-small.uk-text-center
+          h1(uk-slideshow-parallax='y: -50,0,0; opacity: 1,1,0') Vende tu boleto
+          p.uk-text-large(uk-slideshow-parallax='y: 50,0,0; opacity: 1,1,0') Recupera el dinero que invertiste y déjate de preocupaciones
+          button.uk-button.uk-button-danger(uk-slideshow-parallax='y: 150,0,0; opacity: 1,1,0') Vender   
+      li
+        video(src='https://res.cloudinary.com/dr95kad7s/video/upload/v1571461298/slideshow-video-3.mp4' autoplay='' loop='' muted='' playsinline='' uk-cover='')
+        .uk-overlay-primary.uk-position-cover
+        .uk-position-center.uk-position-small.uk-text-center
+          h1(uk-slideshow-parallax='y: -50,0,0; opacity: 1,1,0') Compra tu boleto
+          p.uk-text-large(uk-slideshow-parallax='y: 50,0,0; opacity: 1,1,0') Adquierelo de manera segura sin miedo a revendedores
+          button.uk-button.uk-button-danger(uk-slideshow-parallax='y: 150,0,0; opacity: 1,1,0') Comprar   
+
+    a.uk-position-center-left.uk-position-small.uk-hidden-hover(href='#' uk-slidenav-previous='' uk-slideshow-item='previous')
+    a.uk-position-center-right.uk-position-small.uk-hidden-hover(href='#' uk-slidenav-next='' uk-slideshow-item='next')
+
+  section.uk-section
+    .uk-container
+      h2.uk-text-center Gran variedad de eventos
+      p.uk-text-large.uk-dark.uk-text-center Encuentra el evento, artista o recinto que más te interese 
+      .uk-grid.uk-grid-medium.uk-text-center(class='uk-child-width-expand@s' uk-grid='')
+        div
+         .uk-card.uk-card-default
+          .uk-card-media-top
+            img(src='https://getuikit.com/docs/images/light.jpg' alt='')
+          .uk-card-body
+            h3.uk-card-title Media Top
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. 
+          .uk-card-footer
+            .uk-grid-small.uk-flex-middle(uk-grid='')
+              .uk-width-auto
+                img.uk-border-circle(width='40' height='40' src='https://getuikit.com/docs/images/avatar.jpg')
+              .uk-width-expand
+                h3.uk-card-title.uk-margin-remove-bottom Title
+                p.uk-text-meta.uk-margin-remove-top
+                  time(datetime='2016-04-01T19:00') April 01, 2016
+
+
+        div
+          .uk-card.uk-card-default.uk-card-body Item
+        div
+          .uk-card.uk-card-default.uk-card-body Item
+        div
+          .uk-card.uk-card-default.uk-card-body Item    
+          
+
+
+  section.uk-section
+    .uk-container
+      .uk-grid.uk-grid-medium
+        .uk-grid-match(class='uk-child-width-1-3@s' uk-grid='')
+          div
+            .uk-card.uk-card-default.uk-card-hover.uk-card-body.uk-text-center
+              h3.uk-card-title Busca
+              p Encuentra el evento que desees, entre conciertos, eventos deportivos, teatro y más.
+          div
+            .uk-card.uk-card-default.uk-card-hover.uk-card-body.uk-text-center
+              h3.uk-card-title Oferta
+              p Ofrece al vendedor una cantidad justa por su boleto, sin sobrepasar su precio original.
+          div
+            .uk-card.uk-card-default.uk-card-hover.uk-card-body.uk-text-center
+              h3.uk-card-title Intercambia
+              p Elige de entre las opciones el mejor lugar y horario para recibir tu boleto.
+
+
+  // h1 #{title}
+  // p=`Welcome ${user?user.name:`to ${title}`}`
   

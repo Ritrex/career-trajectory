@@ -1,9 +1,25 @@
+$primary: #900ca9;
+$white: #ffffff;
+$comfortaa: "Comfortaa";
+
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: rgb(82, 121, 136);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Patua One", cursive !important;
+}
+p {
+  font-family: "Comfortaa", cursive !important;
 }
 
 nav {
@@ -14,4 +30,18 @@ nav {
 #no-user-nav {
   display: flex;
   justify-content: space-around;
+}
+
+/* UIKIT styles tropicalized */
+
+.uk-navbar-container {
+  background-color: $primary !important;
+}
+.uk-navbar-nav li a {
+  color: $white !important;
+  font-family: $comfortaa !important;
+  font-weight: 600;
+}
+.uk-text-large {
+  font-size: 1.2rem !important;
 }
