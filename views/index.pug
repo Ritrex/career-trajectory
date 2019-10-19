@@ -7,7 +7,7 @@ block content
         video(src='https://res.cloudinary.com/dr95kad7s/video/upload/v1571461370/slideshow-video-1.mp4' autoplay='' loop='' muted='' playsinline='' uk-cover='')
         .uk-overlay-primary.uk-position-cover
         .uk-position-center.uk-position-small.uk-text-center
-          h1(uk-slideshow-parallax='y: -50,0,0; opacity: 1,1,0') Es más fácil de lo que crees
+          h1(uk-slideshow-parallax='y: -50,0,0; opacity: 1,1,0') Más fácil de lo que crees
           p.uk-text-large.uk-margin-medium-bottom(uk-slideshow-parallax='y: 50,0,0; opacity: 1,1,0') Si no puedes ir, véndelo. Si te hace falta, cómpralo. Así de fácil.
           form(action='POST' uk-slideshow-parallax='y: 150,0,0; opacity: 1,1,0')
             fieldset.uk-fieldset
@@ -21,14 +21,14 @@ block content
         video(src='https://res.cloudinary.com/dr95kad7s/video/upload/v1571459104/slideshow-video-2.mp4' autoplay='' loop='' muted='' playsinline='' uk-cover='')
         .uk-overlay-primary.uk-position-cover
         .uk-position-center.uk-position-small.uk-text-center
-          h1(uk-slideshow-parallax='y: -50,0,0; opacity: 1,1,0') Vende tu boleto
+          h1(uk-slideshow-parallax='y: -50,0,0; opacity: 1,1,0') Vende rápido
           p.uk-text-large(uk-slideshow-parallax='y: 50,0,0; opacity: 1,1,0') Recupera el dinero que invertiste y déjate de preocupaciones
           button.uk-button.uk-button-danger(uk-slideshow-parallax='y: 150,0,0; opacity: 1,1,0') Vender   
       li
         video(src='https://res.cloudinary.com/dr95kad7s/video/upload/v1571461298/slideshow-video-3.mp4' autoplay='' loop='' muted='' playsinline='' uk-cover='')
         .uk-overlay-primary.uk-position-cover
         .uk-position-center.uk-position-small.uk-text-center
-          h1(uk-slideshow-parallax='y: -50,0,0; opacity: 1,1,0') Compra tu boleto
+          h1(uk-slideshow-parallax='y: -50,0,0; opacity: 1,1,0') Compra fácil
           p.uk-text-large(uk-slideshow-parallax='y: 50,0,0; opacity: 1,1,0') Adquierelo de manera segura sin miedo a revendedores
           button.uk-button.uk-button-danger(uk-slideshow-parallax='y: 150,0,0; opacity: 1,1,0') Comprar   
 
@@ -40,46 +40,61 @@ block content
       h2.uk-text-center Gran variedad de eventos
       p.uk-text-large.uk-dark.uk-text-center Encuentra el evento, artista o recinto que más te interese 
       .uk-grid.uk-grid-medium.uk-text-center(class='uk-child-width-expand@s' uk-grid='')
+
         div
          .uk-card.uk-card-default
           .uk-card-media-top
             img(src='https://getuikit.com/docs/images/light.jpg' alt='')
           .uk-card-body
-            h3.uk-card-title Media Top
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. 
-          .uk-card-footer
-            .uk-grid-small.uk-flex-middle(uk-grid='')
+            h3.uk-card-title.uk-text-left.uk-margin-small-bottom Concierto Iron Maiden
+            p.uk-margin-remove-top.uk-text-meta.uk-margin-remove-bottom.uk-text-left 15 Agosto 2019
+            h6.uk-margin-remove-top.uk-text-left.uk-margin-medium-bottom
+              time(datetime='2016-04-01T19:00') Arena Ciudad de México
+            //.card-verified-flag.uk-flex-right
+                  p.uk-text-small.uk-margin-remove-bottom.uk-text-light Usuario verificado
+            // .uk-grid
+              .uk-width-1-1
+                .card-verified-flag.uk-flex-right.uk-background-primary
+                  p.uk-text-small.uk-margin-remove-bottom.uk-text-light Verificado
+
+            .uk-grid-small.uk-flex-left(uk-grid='')
               .uk-width-auto
                 img.uk-border-circle(width='40' height='40' src='https://getuikit.com/docs/images/avatar.jpg')
-              .uk-width-expand
-                h3.uk-card-title.uk-margin-remove-bottom Title
-                p.uk-text-meta.uk-margin-remove-top
-                  time(datetime='2016-04-01T19:00') April 01, 2016
-
-
+              .uk-width-expand.uk-text-left
+                p.uk-text-meta.uk-margin-remove-bottom Miranda Gómez Palafox Vega Hernández
+                .rate-stars
+                  img#star1(src='/images/star.svg') 
+                  img#star1(src='/images/star.svg') 
+                  img#star1(src='/images/star.svg') 
+                  img#star1(src='/images/star.svg') 
+                  img#star1(src='/images/star-off.svg') 
+              .card-verified-flag.uk-flex-right.uk-background-primary
+                  p.uk-text-small.uk-margin-remove-bottom.uk-text-light Verificado    
+       
         div
           .uk-card.uk-card-default.uk-card-body Item
         div
           .uk-card.uk-card-default.uk-card-body Item
-        div
-          .uk-card.uk-card-default.uk-card-body Item    
-          
+           
 
 
-  section.uk-section
+  section.uk-section.uk-background-secondary.uk-padding-large
     .uk-container
       .uk-grid.uk-grid-medium
         .uk-grid-match(class='uk-child-width-1-3@s' uk-grid='')
           div
             .uk-card.uk-card-default.uk-card-hover.uk-card-body.uk-text-center
+              span(uk-icon='icon: heart; ratio: 4')
               h3.uk-card-title Busca
               p Encuentra el evento que desees, entre conciertos, eventos deportivos, teatro y más.
           div
             .uk-card.uk-card-default.uk-card-hover.uk-card-body.uk-text-center
+              span(uk-icon='icon: happy; ratio: 4')
               h3.uk-card-title Oferta
               p Ofrece al vendedor una cantidad justa por su boleto, sin sobrepasar su precio original.
           div
             .uk-card.uk-card-default.uk-card-hover.uk-card-body.uk-text-center
+              span(uk-icon='icon: users; ratio: 4')
               h3.uk-card-title Intercambia
               p Elige de entre las opciones el mejor lugar y horario para recibir tu boleto.
 

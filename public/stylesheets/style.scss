@@ -1,6 +1,7 @@
 $primary: #900ca9;
 $white: #ffffff;
 $comfortaa: "Comfortaa";
+$light-grey: #cbcbcb;
 
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -20,6 +21,7 @@ h6 {
 }
 p {
   font-family: "Comfortaa", cursive !important;
+  line-height: 1.8em;
 }
 
 nav {
@@ -31,7 +33,22 @@ nav {
   display: flex;
   justify-content: space-around;
 }
-
+.card-verified-flag {
+  color: #ffffff;
+  float: right;
+  margin-right: -40px;
+  padding: 5px 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+}
+.rate-stars img {
+  width: 22px;
+  margin-right: 2px;
+}
+.star-off {
+  fill: $light-grey;
+}
 /* UIKIT styles tropicalized */
 
 .uk-navbar-container {

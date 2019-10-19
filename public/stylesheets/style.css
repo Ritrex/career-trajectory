@@ -13,7 +13,8 @@ h6 {
   font-family: "Patua One", cursive !important; }
 
 p {
-  font-family: "Comfortaa", cursive !important; }
+  font-family: "Comfortaa", cursive !important;
+  line-height: 1.8em; }
 
 nav {
   display: flex;
@@ -22,6 +23,22 @@ nav {
 #no-user-nav {
   display: flex;
   justify-content: space-around; }
+
+.card-verified-flag {
+  color: #ffffff;
+  float: right;
+  margin-right: -40px;
+  padding: 5px 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row; }
+
+.rate-stars img {
+  width: 22px;
+  margin-right: 2px; }
+
+.star-off {
+  fill: #cbcbcb; }
 
 /* UIKIT styles tropicalized */
 .uk-navbar-container {
