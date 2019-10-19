@@ -18,20 +18,30 @@ html(lang="en")
             a(href='/feed') MI FEED
       .uk-navbar-right
         ul.uk-navbar-nav
-          li
-            a(href='#') Parent
-          
+          if user 
+            li
+              a(href=`/profile/${user._id}`) Usuario 
+          else
+            li
+              a(href="/login") Login
+            li
+              a(href="/signup") Sign up
 
 
-    nav
-      div
-        if user 
-          a(href=`/profile/${user._id}`) Usuario 
-        else
-          a(href="/login") Login
-          a(href="/signup") Sign up
+  block content 
 
-  block content
+
+  footer.uk-section.uk-section-primary.uk-light.uk-padding-small.uk-position-bottom
+    .uk-container
+      h3 Section Primary
+      .uk-grid-match(class='uk-child-width-1-3@m' uk-grid='')
+        div
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+        div
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+        div
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+
 
   script(src="/javascript/script.js")
   // UIkit JS
