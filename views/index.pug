@@ -1,4 +1,7 @@
 extends layout
+
+include mixin/_auctioncard
+
 block content
 
   .uk-position-relative.uk-visible-toggle.uk-light.uk-height-viewport(tabindex='-1' uk-slideshow='ratio: false;animation: push')
@@ -41,43 +44,12 @@ block content
       p.uk-text-large.uk-dark.uk-text-center Encuentra el evento, artista o recinto que más te interese 
       .uk-grid.uk-grid-medium.uk-text-center(class='uk-child-width-expand@s' uk-grid='')
 
-        div
-         .uk-card.uk-card-default
-          .uk-card-media-top
-            img(src='https://getuikit.com/docs/images/light.jpg' alt='')
-          .uk-card-body
-            h3.uk-card-title.uk-text-left.uk-margin-small-bottom Concierto Iron Maiden
-            p.uk-margin-remove-top.uk-text-meta.uk-margin-remove-bottom.uk-text-left 15 Agosto 2019
-            h6.uk-margin-remove-top.uk-text-left.uk-margin-medium-bottom
-              time(datetime='2016-04-01T19:00') Arena Ciudad de México
-            //.card-verified-flag.uk-flex-right
-                  p.uk-text-small.uk-margin-remove-bottom.uk-text-light Usuario verificado
-            // .uk-grid
-              .uk-width-1-1
-                .card-verified-flag.uk-flex-right.uk-background-primary
-                  p.uk-text-small.uk-margin-remove-bottom.uk-text-light Verificado
+        +auctioncard()
+        +auctioncard()
+        +auctioncard()
 
-            .uk-grid-small.uk-flex-left(uk-grid='')
-              .uk-width-auto
-                img.uk-border-circle(width='40' height='40' src='https://getuikit.com/docs/images/avatar.jpg')
-              .uk-width-expand.uk-text-left
-                p.uk-text-meta.uk-margin-remove-bottom Miranda Gómez Palafox Vega Hernández
-                .rate-stars
-                  img#star1(src='/images/star.svg') 
-                  img#star1(src='/images/star.svg') 
-                  img#star1(src='/images/star.svg') 
-                  img#star1(src='/images/star.svg') 
-                  img#star1(src='/images/star-off.svg') 
-              .card-verified-flag.uk-flex-right.uk-background-primary
-                  p.uk-text-small.uk-margin-remove-bottom.uk-text-light Verificado    
-       
-        div
-          .uk-card.uk-card-default.uk-card-body Item
-        div
-          .uk-card.uk-card-default.uk-card-body Item
-           
-
-
+        
+        
   section.uk-section.uk-background-secondary.uk-padding-large
     .uk-container
       .uk-grid.uk-grid-medium

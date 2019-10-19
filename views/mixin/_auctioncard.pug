@@ -1,42 +1,65 @@
-mixin auctioncard(x, error)
+mixin auctioncard()
+  - var rate = 5;
+  - var arrRate = [];
+  - var limitRate = 4;
+  - var i = 1;
+
 
   div
-         .uk-card.uk-card-default
-          .uk-card-media-top
-            img(src='https://getuikit.com/docs/images/light.jpg' alt='')
-          .uk-card-body
-            h3.uk-card-title.uk-text-left.uk-margin-small-bottom Concierto Iron Maiden
-            p.uk-margin-remove-top.uk-text-meta.uk-margin-remove-bottom.uk-text-left 15 Agosto 2019
-            h6.uk-margin-remove-top.uk-text-left.uk-margin-medium-bottom
-              time(datetime='2016-04-01T19:00') Arena Ciudad de México
-            //.card-verified-flag.uk-flex-right
-                  p.uk-text-small.uk-margin-remove-bottom.uk-text-light Usuario verificado
-            .uk-grid
-              .uk-width-1-1
-                .card-verified-flag.uk-flex-right.uk-background-primary
-                  p.uk-text-small.uk-margin-remove-bottom.uk-text-light Verificado
+    .uk-card.uk-card-default
+    .uk-card-media-top
+      img(src='https://getuikit.com/docs/images/light.jpg' alt='')
+    .uk-card-body
+      h3.uk-card-title.uk-text-left.uk-margin-small-bottom Concierto Iron Maiden
+      p.uk-margin-remove-top.uk-text-meta.uk-margin-remove-bottom.uk-text-left 15 Agosto 2019
+      h6.uk-margin-remove-top.uk-text-left.uk-margin-medium-bottom
+        time(datetime='2016-04-01T19:00') Arena Ciudad de México
+      //.uk-grid
+          .uk-width-1-1
+            .card-verified-flag.uk-flex-right.uk-background-primary
+              p.uk-text-small.uk-margin-remove-bottom.uk-text-light Verificado
 
-            .uk-grid-small.uk-flex-left(uk-grid='')
-              .uk-width-auto
-                img.uk-border-circle(width='40' height='40' src='https://getuikit.com/docs/images/avatar.jpg')
-              .uk-width-expand.uk-text-left
-                p.uk-text-meta.uk-margin-remove-bottom Miranda Gómez Palafox
+      .uk-grid-small.uk-flex-left(uk-grid='')
+        .uk-width-auto
+          img.uk-border-circle(width='40' height='40' src='https://getuikit.com/docs/images/avatar.jpg')
+        .uk-width-expand.uk-text-left
+          p.uk-text-meta.uk-margin-remove-bottom Miranda Gómez Palafox Vega Hernández
+          .card-verified-flag.uk-flex-right.uk-background-primary
+            p.uk-text-small.uk-margin-remove-bottom.uk-text-light Verificado
+          .rate-stars
+            img#star1(src='/images/star.svg') 
+            img#star1(src='/images/star.svg') 
+            img#star1(src='/images/star.svg') 
+            img#star1(src='/images/star.svg') 
+            img#star1(src='/images/star-off.svg') 
+        //.card-verified-flag.uk-flex-right.uk-background-primary
+            p.uk-text-small.uk-margin-remove-bottom.uk-text-light Verificado
 
-               // - let rate = 5
-                - let arrRate = []
-                - const limitRate = 4
-                - let i = 1
-                for(i; i <= rate ; i ++){
-                  arrRate.push(true)
-                }
-                if(arrRate.length <= limitRate){
-                  for(let i = arrRate.length ; i <= limitRate ; i ++){
-                  arrRate.push(false)
-                }
-                }
+        script.
+          console.log('evos')
+          for( var i =; i <= rate ; i ++){
+            arrRate.push(true)
+          }
+          //- if(arrRate.length <= limitRate){
+          //-   for( i = arrRate.length ; i <= limitRate ; i ++){
+          //-   arrRate.push(false)
+          //- }
+          //- }
+          console.log('22222',arrRate)
+
+//-     console.log('Hola')
+  //script(src='/ratingStars.js')
+
+
+            //- script
+            //-     - let rate = 5
+            //-     - let arrRate = []
+            //-     - const limitRate = 4
+            //-     - let i = 1
+
                 
-                console.log('Mi arreglo',arrRate)
+            //-     console.log('Mi arreglo',arrRate)
 
-                each star in arrRate
-                  img(src= true ? '/images/star.svg' : '/images/star-off.svg')
-                //
+            //-     each star in arrRate
+            //-       img(src= true ? '/images/star.svg' : '/images/star-off.svg')
+              
