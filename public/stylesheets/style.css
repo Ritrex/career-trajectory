@@ -16,6 +16,9 @@ p {
   font-family: "Comfortaa", cursive !important;
   line-height: 1.8em; }
 
+label {
+  font-family: "Comfortaa", cursive !important; }
+
 nav {
   display: flex;
   justify-content: space-around; }
@@ -41,6 +44,15 @@ nav {
 .star-off {
   fill: #cbcbcb; }
 
+.new-auct-instructions,
+.new-auct-instructions p,
+.new-auct-instructions a {
+  font-family: "Comfortaa", cursive !important;
+  margin: 10px 0px; }
+
+.new-auct-instructions a {
+  color: #900ca9; }
+
 /* UIKIT styles tropicalized */
 .uk-navbar-container {
   background-color: #900ca9 !important; }
@@ -52,5 +64,14 @@ nav {
 
 .uk-text-large {
   font-size: 1.2rem !important; }
+
+.uk-text-small {
+  font-size: 0.75em !important; }
+
+.uk-form-label {
+  color: #900ca9 !important;
+  font-size: 0.75rem !important;
+  margin-bottom: 5px !important;
+  display: flex !important; }
 
 /*# sourceMappingURL=style.css.map */
