@@ -19,9 +19,15 @@ p {
 label {
   font-family: "Comfortaa", cursive !important; }
 
+footer {
+  background-color: #3b0b44 !important; }
+
 nav {
   display: flex;
   justify-content: space-around; }
+
+#benefits {
+  background-color: #f9f9f9; }
 
 #no-user-nav {
   display: flex;

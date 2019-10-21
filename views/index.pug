@@ -4,7 +4,7 @@ include mixin/_auctioncard
 
 block content
 
-  .uk-position-relative.uk-visible-toggle.uk-light.uk-height-viewport(tabindex='-1' uk-slideshow='ratio: false;animation: push')
+  .uk-position-relative.uk-visible-toggle.uk-light(tabindex='-1' uk-slideshow='ratio: false;animation: push')
     ul.uk-slideshow-items(uk-height-viewport="offset-top: true")
       li
         video(src='https://res.cloudinary.com/dr95kad7s/video/upload/v1571461370/slideshow-video-1.mp4' autoplay='' loop='' muted='' playsinline='' uk-cover='')
@@ -50,23 +50,23 @@ block content
 
         
         
-  section.uk-section.uk-background-secondary.uk-padding-large
-    .uk-container
+  section#benefits.uk-section.uk-padding-large
+    .uk-container.uk-padding-large
       .uk-grid.uk-grid-medium
         .uk-grid-match(class='uk-child-width-1-3@s' uk-grid='')
           div
             .uk-card.uk-card-default.uk-card-hover.uk-card-body.uk-text-center
-              span(uk-icon='icon: heart; ratio: 4')
+              img(src="/images/search.svg" width="80" alt="Busca eventos" uk-svg)
               h3.uk-card-title Busca
               p Encuentra el evento que desees, entre conciertos, eventos deportivos, teatro y más.
           div
             .uk-card.uk-card-default.uk-card-hover.uk-card-body.uk-text-center
-              span(uk-icon='icon: happy; ratio: 4')
+              img(src="/images/bank.svg" width="80" alt="Busca eventos" uk-svg)
               h3.uk-card-title Oferta
               p Ofrece al vendedor una cantidad justa por su boleto, sin sobrepasar su precio original.
           div
             .uk-card.uk-card-default.uk-card-hover.uk-card-body.uk-text-center
-              span(uk-icon='icon: users; ratio: 4')
+              img(src="/images/tickets.svg" width="80" alt="Busca eventos" uk-svg)
               h3.uk-card-title Intercambia
               p Elige de entre las opciones el mejor lugar y horario para recibir tu boleto.
 
