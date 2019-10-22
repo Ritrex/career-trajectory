@@ -1,6 +1,8 @@
 extends layout
+
 block content
 
   h1 #{title}
   p=`Welcome ${user?user.name:`to ${title}`}`
+  img(src=`${img}`, alt="")
   

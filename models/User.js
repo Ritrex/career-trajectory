@@ -12,14 +12,13 @@ const UserSchema=new Schema({
     type:String,
     required:true
   },
+  email:{
+    type:String,
+    required:true
+  },
   last_login:{
     type:Date,
     default:Date.now()
-  },
-
-  sales:{
-    type:[Schema.Types.ObjectId],
-    ref:'Sale'
   },
   
   number_of_sales:{
