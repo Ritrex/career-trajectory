@@ -1,0 +1,32 @@
+extends layout
+
+include mixin/_auctioncard
+
+block content
+
+  .uk-height-medium.uk-flex.uk-flex-center.uk-flex-middle.uk-background-cover.uk-light.uk-text-center(data-src='images/photo.jpg' uk-img='')
+  h1 ¿A dónde quieres ir hoy?
+  form(action='GET')
+            fieldset.uk-fieldset
+              .uk-margin
+                .uk-inline
+                  a.uk-form-icon.uk-form-icon-flip(href='#' uk-icon='icon: search')
+                  input.uk-input.uk-form-width-large(type='text' placeholder='Conciertos, partidos, teatro, festivales y más...')
+
+
+
+
+
+
+  //.uk-height-medium.uk-flex.uk-flex-center.uk-flex-middle.uk-light(data-src='https://getuikit.com/docs/images/light.jpg' uk-img='')
+        .uk-overlay-primary.uk-position-cover
+        .uk-position-center.uk-position-small.uk-text-center
+          h1(uk-slideshow-parallax='y: -50,0,0; opacity: 1,1,0') ¿A dónde quieres ir hoy?
+          form(action='GET' uk-slideshow-parallax='y: 150,0,0; opacity: 1,1,0')
+            fieldset.uk-fieldset
+              .uk-margin
+                .uk-inline
+                  a.uk-form-icon.uk-form-icon-flip(href='#' uk-icon='icon: search')
+                  input.uk-input.uk-form-width-large(type='text' placeholder='Conciertos, partidos, teatro, festivales y más...')
+
+

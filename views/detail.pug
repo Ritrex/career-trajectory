@@ -1,20 +1,32 @@
 extends layout
 block content
 
+    .uk-height-medium.uk-flex.uk-flex-center.uk-flex-middle.uk-flex-column.uk-background-cover.uk-light.uk-overlay.uk-overlay-primary(data-src='https://getuikit.com/docs/images/photo.jpg' uk-img='')
+      .uk-overlay.uk-overlay-primary.uk-text-center
+        h1.uk-margin-remove Nombre del evento
+        h2.uk-margin-small 13 de Enero 2019
+        h5.uk-margin-remove Palacio de los deportes
+    .uk-container.uk-container-large(style='background-color: #fafafa')
+      .uk-grid.uk-padding-large
+        .uk-card.uk-card-default.uk-card-body(class='uk-width-1-2@m')
+          .uk-grid-small.uk-flex-middle(uk-grid='')
+            .uk-width-auto
+              img.uk-border-circle(width='100' height='100' src='https://getuikit.com/docs/images/avatar.jpg')
+            .uk-width-expand
+              h3.uk-card-title.uk-margin-remove-bottom Nombre del usuario
+              .uk-card-badge.uk-label(style='') Verificado
+              p.uk-text-meta.uk-margin-remove
+                time(datetime='2016-04-01T19:00') April 01, 2016
+              .rateStars
+                img(src='./images/star.svg' style='width: 22px; margin-right: 2px;')
+                img(src='./images/star.svg' style='width: 22px; margin-right: 2px;')
+                img(src='./images/star.svg' style='width: 22px; margin-right: 2px;')
+                img(src='./images/star.svg' style='width: 22px; margin-right: 2px;')
+                img(src='./images/star.svg' style='width: 22px; margin-right: 2px;')
+          h3.uk-card-title $900 - $1200
+          p
+            | Lorem ipsum color sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    .uk-container.uk-container-large.uk-margin-large-bottom(style='background-color: #fafafa')
+      .uk-grid.uk-padding-large
 
-    .uk-height-medium.uk-flex.uk-flex-center.uk-flex-middle.uk-background-cover.uk-light(data-src='https://getuikit.com/docs/images/photo.jpg' uk-img='')
-      h1 Concierto de Iron Maiden
-
-    .uk-container.uk-margin-large
-      .uk-width-auto
-        img.uk-border-circle(width='40' height='40' src='https://getuikit.com/docs/images/avatar.jpg')
-      .uk-width-expand.uk-text-left
-        p.uk-text-meta.uk-margin-remove-bottom Miranda Gómez Palafox Vega Hernández
-        .card-verified-flag.uk-flex-right.uk-background-primary
-          p.uk-text-small.uk-margin-remove-bottom.uk-text-light Verificado
-        .rate-stars
-          img#star1(src='/images/star.svg') 
-          img#star1(src='/images/star.svg') 
-          img#star1(src='/images/star.svg') 
-          img#star1(src='/images/star.svg') 
-          img#star1(src='/images/star-off.svg')   
+       
