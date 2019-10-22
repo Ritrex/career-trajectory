@@ -2,31 +2,66 @@ extends layout
 
 include mixin/_auctioncard
 
+include mixin/_myoffer
+
 block content
 
-  .uk-height-medium.uk-flex.uk-flex-center.uk-flex-middle.uk-background-cover.uk-light.uk-text-center(data-src='images/photo.jpg' uk-img='')
-  h1 ¿A dónde quieres ir hoy?
-  form(action='GET')
+  .uk-height-medium.uk-flex.uk-flex-center.uk-flex-middle.uk-flex-column.uk-background-cover.uk-light.uk-overlay.uk-overlay-primary(data-src='https://getuikit.com/docs/images/photo.jpg' uk-img='')
+      .uk-overlay.uk-overlay-primary.uk-text-center.uk-position-center.uk-position-small.uk-text-center
+          h1 ¿A dónde quieres ir hoy?
+          form(action='GET')
             fieldset.uk-fieldset
               .uk-margin
                 .uk-inline
                   a.uk-form-icon.uk-form-icon-flip(href='#' uk-icon='icon: search')
                   input.uk-input.uk-form-width-large(type='text' placeholder='Conciertos, partidos, teatro, festivales y más...')
 
+  section.uk-section
+    .uk-container
+      h2.uk-text-center Te puede interesar
+      p.uk-text-large.uk-dark.uk-text-center.uk-margin-large-bottom Te recomendamos eventos relacionados con tus últimas búsquedas
+      .uk-grid.uk-grid-medium.uk-text-center(class='uk-child-width-expand@s' uk-grid='')
+
+        +auctioncard()
+        +auctioncard()
+        +auctioncard()
+
+  section.uk-section.uk-background-primary
+    .uk-container
+      h2.uk-text-center Mis ofertas
+    .uk-child-width-1-2.uk-text-center.uk-margin  
+        +myoffer()
+        +myoffer()      
+
+  section.uk-section
+    .uk-container
+      h2.uk-text-center Mejora tu experiencia
+      p.uk-text-large.uk-dark.uk-text-center.uk-margin-remove-bottom Queremos ser tu plataforma de confianza, por ello te recomendamos tener en cuenta los siguientes datos
 
 
-
-
-
-  //.uk-height-medium.uk-flex.uk-flex-center.uk-flex-middle.uk-light(data-src='https://getuikit.com/docs/images/light.jpg' uk-img='')
-        .uk-overlay-primary.uk-position-cover
-        .uk-position-center.uk-position-small.uk-text-center
-          h1(uk-slideshow-parallax='y: -50,0,0; opacity: 1,1,0') ¿A dónde quieres ir hoy?
-          form(action='GET' uk-slideshow-parallax='y: 150,0,0; opacity: 1,1,0')
-            fieldset.uk-fieldset
-              .uk-margin
-                .uk-inline
-                  a.uk-form-icon.uk-form-icon-flip(href='#' uk-icon='icon: search')
-                  input.uk-input.uk-form-width-large(type='text' placeholder='Conciertos, partidos, teatro, festivales y más...')
+    .uk-container.uk-padding-large.uk-grid-match.uk-margin-remove-top.uk-text-center(class='uk-child-width-1-4@s' uk-grid='')
+      div
+        .uk-card.uk-card-body
+          img(src="/images/bank.svg" width="80" alt="Busca eventos" uk-svg)
+          h4 Identidad
+          p Si el vendedor es "Verificado", estás intercambiando con alguien de confianza          
+      div
+        .uk-card.uk-card-body
+          img(src="/images/bank.svg" width="80" alt="Busca eventos" uk-svg)
+          h4 Evento
+          p Valida que los datos proporcionados por el usuario coincidan con los de la foto del boleto 
+      div
+        .uk-card.uk-card-body
+          img(src="/images/bank.svg" width="80" alt="Busca eventos" uk-svg)
+          h4 Precio
+          p Revisa que el vendedor solicite como máximo el costo original del boleto
+      div
+        .uk-card.uk-card-body
+          img(src="/images/bank.svg" width="80" alt="Busca eventos" uk-svg)
+          h4 Seguimiento
+          p Verifica tu correo, así podremos darle el seguimiento correcto a tu intercambio
+                          
+        
+        
 
 
