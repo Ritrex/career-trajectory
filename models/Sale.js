@@ -22,7 +22,7 @@ const salesSchema=new Schema({
   },
   
   prefered_locations:{
-    type:[Schema.Types.ObjectId]
+    type:[{type:Schema.Types.ObjectId,}]
 
   }
 },{timestamps:true})

@@ -75,9 +75,17 @@ const index = require("./routes/index");
 const newAuct = require("./routes/newAuction");
 const auctDetail = require("./routes/detail");
 const feed = require("./routes/feed");
+const auth = require("./routes/auth");
+const Item = require("./routes/item");
+const perfil = require("./routes/perfil");
+const sales = require("./routes/sales");
 app.use("/", index);
 app.use("/", newAuct);
 app.use("/", auctDetail);
 app.use("/", feed);
+app.use("/", auth);
+app.use("/", Item);
+app.use("/", perfil);
+app.use("/", sales);
 
 module.exports = app;
