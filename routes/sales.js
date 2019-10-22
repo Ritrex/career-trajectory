@@ -19,6 +19,14 @@ router.get('/sales/:userid/:saleid',(req,res)=>{
   .then(foundsale=>{
     let imgpromise = Item.populate(foundsale,{path:"scr_url_public"})
     let bidpromise = Bid.populate(foundsale,{path:""})
+    Promise.all([imgpromise,bidpromise])
+    .then(results=>{
+      
+      res.render('sale',{foundsale})
+    })
+    .catch(error=>{
+      res.render('perfil',{error})
+    })
   })
   .catch(error=>{
     console.log(error)
