@@ -74,7 +74,7 @@ app.use(express_session({
 app.use(passport.initialize())
 //app.use(express_session)
 app.use(passport.session())
-
+//hola
 // LocalStrategy=passport_local.Strategy
 // passport.use(new LocalStrategy(User.createStrategy()))
 // passport.serializeUser(User.serializeUser())
