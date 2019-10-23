@@ -1,10 +1,8 @@
 extends layout
 
-block navelements
-  a(href="#") Home
+block content
 
-
-block body
-  <h1>#{title}</h1>
+  h1 #{title}
   p=`Welcome ${user?user.name:`to ${title}`}`
+  img(src=`${img}`, alt="")
   

@@ -1,26 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>#{title}</title>
-  <link rel="stylesheet" href="/stylesheets/style.css" />
-  block styles
-</head>
-<body>
-  nav
-    block navelements
-    div#no-user-nav
-      if user 
-        a(href=`/profile/${user._id}`) Usuario 
-      else
-        a(href="/login") Login
-        a(href="/signup") Sign up
-    
-  block body
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title #{title}
+    link(rel="stylesheet", href="/stylesheets/style.css")
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/css/uikit.min.css')
+  body
 
-  block scripts
-  <script src="/javascripts/script.js"></script>
-</body>
-</html>
+    nav.uk-navbar-container(uk-navbar='')
+      .uk-navbar-left
+        ul.uk-navbar-nav
+          li.uk-active
+            a(href='/index') EN CORTO
+          li
+            a(href='#') Parent
+          li
+            a(href='#') Item
+      .uk-navbar-right
+        ul.uk-navbar-nav
+          li
+            a(href='#') Parent
+          
+
+
+    nav
+      div
+        if user 
+          a(href=`/profile/${user._id}`) Usuario 
+        else
+          a(href="/login") Login
+          a(href="/signup") Sign up
+
+  block content
+
+  script(src="/javascripts/script.js")
+  // UIkit JS
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit-icons.min.js')
+
+

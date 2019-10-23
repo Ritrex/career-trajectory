@@ -1,4 +1,5 @@
 const mongoose=require('mongoose')
+const passpor_local_mongoose=require('passport-local-mongoose')
 const {Schema,model}=mongoose
 
 
@@ -12,14 +13,13 @@ const UserSchema=new Schema({
     type:String,
     required:true
   },
+  email:{
+    type:String,
+    required:true
+  },
   last_login:{
     type:Date,
     default:Date.now()
-  },
-
-  sales:{
-    type:[Schema.Types.ObjectId],
-    ref:'Sale'
   },
   
   number_of_sales:{
@@ -28,21 +28,23 @@ const UserSchema=new Schema({
     default:0
   },
 
-  number_of_succesful_sales:{
-    type:Number,
-    required:true,
-    default:0
-  },
 
-  number_of_acquisitions:{
-    type:Number,
-    required:true,
-    default:0
-  }
-
+  // number_of_acquisitions:{
+  //   type:Number,
+  //   required:true,
+  //   default:0
+  // },
+  rating:{type:Number,
+    enum:[1,2,3,4,5],
+    default:5},
+  telefono:{type:String},
+  intereses:{type:[String]},
+    foto:{type:String},
+    rfc:{type:String},
+    domicilio:{type:String}
 },{timestamps:true})
 
-
+UserSchema.plugin(passpor_local_mongoose)
 
 
 module.exports=model("User",UserSchema)
