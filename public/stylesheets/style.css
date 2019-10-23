@@ -4,12 +4,80 @@ body {
 a {
   color: #527988; }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Patua One", cursive !important; }
+
+p {
+  font-family: "Comfortaa", cursive !important;
+  line-height: 1.8em; }
+
+label {
+  font-family: "Comfortaa", cursive !important; }
+
+footer {
+  background-color: #3b0b44 !important; }
+
 nav {
   display: flex;
   justify-content: space-around; }
 
+#benefits {
+  background-color: #f9f9f9; }
+
 #no-user-nav {
   display: flex;
   justify-content: space-around; }
+
+.card-verified-flag {
+  color: #ffffff;
+  float: right;
+  margin-right: -40px;
+  padding: 5px 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  height: 20px; }
+
+.rate-stars img {
+  width: 22px;
+  margin-right: 2px; }
+
+.star-off {
+  fill: #cbcbcb; }
+
+.new-auct-instructions,
+.new-auct-instructions p,
+.new-auct-instructions a {
+  font-family: "Comfortaa", cursive !important;
+  margin: 10px 0px; }
+
+.new-auct-instructions a {
+  color: #900ca9; }
+
+/* UIKIT styles tropicalized */
+.uk-navbar-container {
+  background-color: #900ca9 !important; }
+
+.uk-navbar-nav li a {
+  color: #ffffff !important;
+  font-family: "Comfortaa" !important;
+  font-weight: 600; }
+
+.uk-text-large {
+  font-size: 1.2rem !important; }
+
+.uk-text-small {
+  font-size: 0.75em !important; }
+
+.uk-form-label {
+  color: #900ca9 !important;
+  font-size: 0.75rem !important;
+  margin-bottom: 5px !important;
+  display: flex !important; }
 
 /*# sourceMappingURL=style.css.map */

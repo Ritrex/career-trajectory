@@ -7,35 +7,43 @@ html(lang="en")
     title #{title}
     link(rel="stylesheet", href="/stylesheets/style.css")
     link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/css/uikit.min.css')
+    link(href='https://fonts.googleapis.com/css?family=Comfortaa:300,600|Patua+One&display=swap' rel='stylesheet')
+
   body
 
-    nav.uk-navbar-container(uk-navbar='')
+    nav.uk-navbar-container(uk-navbar='' uk-sticky="bottom: #offset")
       .uk-navbar-left
         ul.uk-navbar-nav
           li.uk-active
-            a(href='/index') EN CORTO
+            a(href='/index') LOGO
           li
-            a(href='#') Parent
-          li
-            a(href='#') Item
+            a(href='/feed') MI FEED
       .uk-navbar-right
         ul.uk-navbar-nav
-          li
-            a(href='#') Parent
-          
+          if user 
+            li
+              a(href=`/profile/${user._id}`) Usuario 
+          else
+            li
+              a(href="/login") Login
+            li
+              a(href="/signup") Sign up
 
+  // Temporary content
 
-    nav
-      div
-        if user 
-          a(href=`/profile/${user._id}`) Usuario 
-        else
-          a(href="/login") Login
-          a(href="/signup") Sign up
+  // Temporary content ends
+  
 
   block content
 
-  script(src="/javascripts/script.js")
+
+  footer.uk-section.uk-section-secondary.uk-light.uk-padding-small
+    .uk-container.uk-align-center.uk-text-center
+      h3.uk-margin-small-bottom Logo
+      p.uk-margin-remove-top Proyecto de Ro & Nan para su segundo módulo en Ironhack &#10084;&#65039;
+
+  script(src="/javascript/script.js")
+
   // UIkit JS
   script(src='https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js')
   script(src='https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit-icons.min.js')

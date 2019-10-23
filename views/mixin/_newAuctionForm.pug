@@ -1,0 +1,111 @@
+mixin newAuctionForm()
+
+  form(action=register ? "/signup" : "/login" class="uk-grid-small uk-margin-large-top uk-margin-large-bottom" uk-grid method="post")
+
+    .uk-margin.uk-width-1-1.new-auct-instructions
+      h4.uk-margin-remove-bottom 1. Comparte los datos del evento
+      p Revisa tu boleto y coloca los datos que vienen en él.
+
+    .uk-margin.uk-width-1-1
+      label(class="uk-form-label" for="event") Nombre del evento
+      .uk-inline.uk-width-1-1
+        span.uk-form-icon(uk-icon='icon: user')
+        input.uk-input(type='text' name="event")
+
+    .uk-margin.uk-width-1-2
+      label(class="uk-form-label" for="event-date") Fecha del evento
+      .uk-inline.uk-width-1-1
+        span.uk-form-icon(uk-icon='icon: user')
+        input.uk-input(type='date' name="event-date")
+
+    .uk-margin.uk-width-1-2
+      label(class="uk-form-label" for="event-arena") Recinto del evento
+      .uk-inline.uk-width-1-1
+        span.uk-form-icon(uk-icon='icon: user')
+        input.uk-input(type='text' name="event-arena")
+
+    .uk-margin.uk-width-1-2
+      label(class="uk-form-label" for="min-price") Oferta mínima
+      .uk-inline.uk-width-1-1
+        span.uk-form-icon(uk-icon='icon: user')
+        input.uk-input(type='number' name="min-price")
+
+    .uk-margin.uk-width-1-2
+      label(class="uk-form-label" for="max-price") Oferta máxima*
+      .uk-inline.uk-width-1-1
+        span.uk-form-icon(uk-icon='icon: user')
+        input.uk-input(type='number' name="max-price")    
+
+    .uk-margin.uk-margin-remove-top.uk-width-1-1
+      p.uk-text-small.uk-text-primary *La oferta máxima que puedes recibir por tu boleto es la de su costo original
+
+    .uk-margin.uk-width-1-1.new-auct-instructions
+      h4.uk-margin-remove-bottom 2. Coloca tres lugares donde te gustaría realizar el intercambio
+      p.uk-margin-remove-top
+      | Localiza las ubicaciones 
+      a(href='https://www.google.com.mx/maps/@19.3809121,-99.1500391,17z' class="uk-text-bold") aquí
+      | , copia el link de cada uno y pégalo en el formulario.
+
+    .uk-margin.uk-width-1-3
+      .uk-inline.uk-width-1-1
+        span.uk-form-icon(uk-icon='icon: user')
+        input.uk-input(type='text' name="place-one") 
+
+    .uk-margin.uk-width-1-3
+      .uk-inline.uk-width-1-1
+        span.uk-form-icon(uk-icon='icon: user')
+        input.uk-input(type='text' name="place-two")  
+
+    .uk-margin.uk-width-1-3
+      .uk-inline.uk-width-1-1
+        span.uk-form-icon(uk-icon='icon: user')
+        input.uk-input(type='text' name="place-three")  
+        
+    .uk-margin.uk-width-1-1.new-auct-instructions
+      h4.uk-margin-remove-bottom 3. Elige tres horarios disponibles para el intercambio
+      p Asegúrate de tener disponibilidad y ser puntual al ver a tu comprador.
+
+    .uk-margin.uk-width-1-3
+      .uk-inline.uk-width-1-1
+        span.uk-form-icon(uk-icon='icon: user')
+        input.uk-input(type='time' name="place-one") 
+
+    .uk-margin.uk-width-1-3
+      .uk-inline.uk-width-1-1
+        span.uk-form-icon(uk-icon='icon: user')
+        input.uk-input(type='time' name="place-two")  
+
+    .uk-margin.uk-width-1-3
+      .uk-inline.uk-width-1-1
+        span.uk-form-icon(uk-icon='icon: user')
+        input.uk-input(type='time' name="place-three")  
+
+    .uk-margin.uk-width-1-1.new-auct-instructions
+      h4.uk-margin-remove-bottom 4. Sube la foto de tu boleto 
+      p Toma fotos claras e iluminadas de tu boleto.
+
+    .uk-margin.uk-width-1-2
+      label(class="uk-form-label" for="ticket-full") Imagen completa de tu boleto
+      .uk-inline.uk-width-1-1
+        span.uk-form-icon(uk-icon='icon: image')
+        input.uk-input(type='file' name="ticket-full")
+
+    .uk-margin.uk-width-1-2
+      label(class="uk-form-label" for="ticket-full") Imagen completa de tu boleto
+      .uk-inline.uk-width-1-1
+        span.uk-form-icon(uk-icon='icon: image')
+        input.uk-input(type='file' name="ticket-full")    
+          
+
+    if errorMessage
+      .uk-alert-danger.uk-width-1-1(uk-alert)
+        p #{errorMessage}
+        
+    button.uk-button.uk-width-1-3.uk-align-center.uk-button-danger(type="submit") Crear subasta
+
+
+
+    // foto de boleto completo requerido
+    // foto de zona segura requerido
+    // foto del evento (opcional)
+    // boton crear subasta

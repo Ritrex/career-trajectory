@@ -1,3 +1,10 @@
+$primary: #900ca9;
+$darker: #3b0b44;
+$white: #ffffff;
+$comfortaa: "Comfortaa";
+$light-grey: #cbcbcb;
+$lighter-grey: #f9f9f9;
+
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -6,12 +13,80 @@ a {
   color: rgb(82, 121, 136);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Patua One", cursive !important;
+}
+p {
+  font-family: "Comfortaa", cursive !important;
+  line-height: 1.8em;
+}
+label {
+  font-family: "Comfortaa", cursive !important;
+}
+footer {
+  background-color: $darker !important;
+}
 nav {
   display: flex;
   justify-content: space-around;
 }
-
+#benefits {
+  background-color: $lighter-grey;
+}
 #no-user-nav {
   display: flex;
   justify-content: space-around;
+}
+.card-verified-flag {
+  color: #ffffff;
+  float: right;
+  margin-right: -40px;
+  padding: 5px 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  height: 20px;
+}
+.rate-stars img {
+  width: 22px;
+  margin-right: 2px;
+}
+.star-off {
+  fill: $light-grey;
+}
+.new-auct-instructions,
+.new-auct-instructions p,
+.new-auct-instructions a {
+  font-family: "Comfortaa", cursive !important;
+  margin: 10px 0px;
+}
+.new-auct-instructions a {
+  color: $primary;
+}
+/* UIKIT styles tropicalized */
+
+.uk-navbar-container {
+  background-color: $primary !important;
+}
+.uk-navbar-nav li a {
+  color: $white !important;
+  font-family: $comfortaa !important;
+  font-weight: 600;
+}
+.uk-text-large {
+  font-size: 1.2rem !important;
+}
+.uk-text-small {
+  font-size: 0.75em !important;
+}
+.uk-form-label {
+  color: $primary !important;
+  font-size: 0.75rem !important;
+  margin-bottom: 5px !important;
+  display: flex !important;
 }

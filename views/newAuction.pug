@@ -1,0 +1,18 @@
+extends layout
+
+include mixin/_newAuctionForm
+
+block content
+
+
+  //section.uk-section.uk-margin-remove-bottom
+    .uk-container
+      h2.uk-text-center Vende tus boletos fácil y seguro
+      p.uk-text-large.uk-dark.uk-text-center Llena tus datos para crear la subasta y recibir ofertas rápidamente
+      
+
+  section
+    .uk-container.uk-flex.uk-flex-center
+      .uk-width-1-2.uk-flex.uk-flex-center
+        +newAuctionForm()
+
