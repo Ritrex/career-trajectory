@@ -1,9 +1,10 @@
 const by=require('bcryptjs')
-const salt =12
+const salt =process.env.SALT
 const app=require('./app')
-let hash=by.hashSync("1234",by.genSaltSync(salt))
+let password="abc"
+let hash=by.hashSync(password,by.genSaltSync(salt))
 console.log(hash)
-console.log(by.compareSync("1234","$2a$12$/jojgCVhldyim6zlsl/NY.IMze8xFInHkNC6R/9Es1kAVn9j5XQDu"))
+console.log(by.compareSync(password,hash))
 
 
 app.post('/signup',(req,res)=>{

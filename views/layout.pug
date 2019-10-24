@@ -21,8 +21,14 @@ html(lang="en")
       .uk-navbar-right
         ul.uk-navbar-nav
           if user 
+            if infeed
+              li 
+              a(href=`/newAuction/new`) Vender
+            
             li
-              a(href=`/profile/${user._id}`) Usuario 
+              a(href=`/profile/${user._id}`) Usuario
+            li
+              a(href='/logout') Logout 
           else
             li
               a(href="/login") Login

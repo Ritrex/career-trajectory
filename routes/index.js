@@ -32,7 +32,7 @@ router.get("/", (req, res, next) => {
 
 router.post("/",(req,res)=>{
   let {search}=req.body
-  console.log(search.split(" "))
+  console.log(search)
   res.redirect("/",200)
 })
 module.exports = router;

@@ -3,7 +3,8 @@ const router = express.Router();
 
 /* GET home page */
 router.get("/feed", (req, res, next) => {
-  res.render("feed");
+  console.log('req.user',req.user)
+  res.render("feed",{user:req.user});
 });
 
 
