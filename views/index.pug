@@ -12,12 +12,12 @@ block content
         .uk-position-center.uk-position-small.uk-text-center
           h1(uk-slideshow-parallax='y: -50,0,0; opacity: 1,1,0') Más fácil de lo que crees
           p.uk-text-large.uk-margin-medium-bottom(uk-slideshow-parallax='y: 50,0,0; opacity: 1,1,0') Si no puedes ir, véndelo. Si te hace falta, cómpralo. Así de fácil.
-          form(action='POST' uk-slideshow-parallax='y: 150,0,0; opacity: 1,1,0')
+          form(action='/' uk-slideshow-parallax='y: 150,0,0; opacity: 1,1,0')
             fieldset.uk-fieldset
               .uk-margin
                 .uk-inline
                   a.uk-form-icon.uk-form-icon-flip(href='#' uk-icon='icon: search')
-                  input.uk-input.uk-form-width-large(type='text' placeholder='Conciertos, partidos, teatro, festivales y más...')
+                  input.uk-input.uk-form-width-large(type='text' name='search' placeholder='Conciertos, partidos, teatro, festivales y más...')
 
 
       li
@@ -70,7 +70,7 @@ block content
               h3.uk-card-title Intercambia
               p Elige de entre las opciones el mejor lugar y horario para recibir tu boleto.
 
-
+  script(src="/javascripts/searchbar.js")
   // h1 #{title}
   // p=`Welcome ${user?user.name:`to ${title}`}`
   // img(src=`${img}`, alt="")

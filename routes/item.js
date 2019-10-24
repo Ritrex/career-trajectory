@@ -12,7 +12,7 @@ router.get('/item/:itemid',(req,res)=>{
 })
 
 router.get('/item/new',(req,res)=>{
-  res.render('item')
+  res.render('newAuction')
 })
 
 router.post('/item/new',(req,res)=>{

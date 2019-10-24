@@ -1,4 +1,4 @@
-mixin newAuctionForm()
+mixin newAuctionForm(data)
 
   form(action=register ? "/signup" : "/login" class="uk-grid-small uk-margin-large-top uk-margin-large-bottom" uk-grid method="post")
 
@@ -13,28 +13,28 @@ mixin newAuctionForm()
         input.uk-input(type='text' name="event")
 
     .uk-margin.uk-width-1-2
-      label(class="uk-form-label" for="event-date") Fecha del evento
+      label(class="uk-form-label" for="event_date") Fecha del evento
       .uk-inline.uk-width-1-1
         span.uk-form-icon(uk-icon='icon: user')
-        input.uk-input(type='date' name="event-date")
+        input.uk-input(type='date' name="event_date")
 
     .uk-margin.uk-width-1-2
-      label(class="uk-form-label" for="event-arena") Recinto del evento
+      label(class="uk-form-label" for="event_arena") Recinto del evento
       .uk-inline.uk-width-1-1
         span.uk-form-icon(uk-icon='icon: user')
-        input.uk-input(type='text' name="event-arena")
+        input.uk-input(type='text' name="event_arena")
 
     .uk-margin.uk-width-1-2
-      label(class="uk-form-label" for="min-price") Oferta mínima
+      label(class="uk-form-label" for="min_price") Oferta mínima
       .uk-inline.uk-width-1-1
         span.uk-form-icon(uk-icon='icon: user')
-        input.uk-input(type='number' name="min-price")
+        input.uk-input(type='number' name="min_price")
 
     .uk-margin.uk-width-1-2
-      label(class="uk-form-label" for="max-price") Oferta máxima*
+      label(class="uk-form-label" for="max_price") Oferta máxima*
       .uk-inline.uk-width-1-1
         span.uk-form-icon(uk-icon='icon: user')
-        input.uk-input(type='number' name="max-price")    
+        input.uk-input(type='number' name="max_price")    
 
     .uk-margin.uk-margin-remove-top.uk-width-1-1
       p.uk-text-small.uk-text-primary *La oferta máxima que puedes recibir por tu boleto es la de su costo original
@@ -49,17 +49,17 @@ mixin newAuctionForm()
     .uk-margin.uk-width-1-3
       .uk-inline.uk-width-1-1
         span.uk-form-icon(uk-icon='icon: user')
-        input.uk-input(type='text' name="place-one") 
+        input.uk-input(type='text' name="place_one") 
 
     .uk-margin.uk-width-1-3
       .uk-inline.uk-width-1-1
         span.uk-form-icon(uk-icon='icon: user')
-        input.uk-input(type='text' name="place-two")  
+        input.uk-input(type='text' name="place_two")  
 
     .uk-margin.uk-width-1-3
       .uk-inline.uk-width-1-1
         span.uk-form-icon(uk-icon='icon: user')
-        input.uk-input(type='text' name="place-three")  
+        input.uk-input(type='text' name="place_three")  
         
     .uk-margin.uk-width-1-1.new-auct-instructions
       h4.uk-margin-remove-bottom 3. Elige tres horarios disponibles para el intercambio
@@ -68,33 +68,33 @@ mixin newAuctionForm()
     .uk-margin.uk-width-1-3
       .uk-inline.uk-width-1-1
         span.uk-form-icon(uk-icon='icon: user')
-        input.uk-input(type='time' name="place-one") 
+        input.uk-input(type='time' name="place_one") 
 
     .uk-margin.uk-width-1-3
       .uk-inline.uk-width-1-1
         span.uk-form-icon(uk-icon='icon: user')
-        input.uk-input(type='time' name="place-two")  
+        input.uk-input(type='time' name="place_two")  
 
     .uk-margin.uk-width-1-3
       .uk-inline.uk-width-1-1
         span.uk-form-icon(uk-icon='icon: user')
-        input.uk-input(type='time' name="place-three")  
+        input.uk-input(type='time' name="place_three")  
 
     .uk-margin.uk-width-1-1.new-auct-instructions
       h4.uk-margin-remove-bottom 4. Sube la foto de tu boleto 
       p Toma fotos claras e iluminadas de tu boleto.
 
     .uk-margin.uk-width-1-2
-      label(class="uk-form-label" for="ticket-full") Imagen completa de tu boleto
+      label(class="uk-form-label" for="ticket_full") Imagen completa de tu boleto
       .uk-inline.uk-width-1-1
         span.uk-form-icon(uk-icon='icon: image')
-        input.uk-input(type='file' name="ticket-full")
+        input.uk-input(type='file' name="ticket_full")
 
     .uk-margin.uk-width-1-2
-      label(class="uk-form-label" for="ticket-full") Imagen completa de tu boleto
+      label(class="uk-form-label" for="ticket_partial") Imagen completa de tu boleto
       .uk-inline.uk-width-1-1
         span.uk-form-icon(uk-icon='icon: image')
-        input.uk-input(type='file' name="ticket-full")    
+        input.uk-input(type='file' name="ticket_partial")    
           
 
     if errorMessage
