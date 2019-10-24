@@ -16,7 +16,7 @@ block content
                   a.uk-form-icon.uk-form-icon-flip(href='#' uk-icon='icon: search')
                   input.uk-input.uk-form-width-large(type='text' placeholder='Conciertos, partidos, teatro, festivales y más...')
 
-  section.uk-section
+  section#related.uk-section
     .uk-container
       h2.uk-text-center Te puede interesar
       p.uk-text-large.uk-dark.uk-text-center.uk-margin-large-bottom Te recomendamos eventos relacionados con tus últimas búsquedas
@@ -29,7 +29,7 @@ block content
   section.uk-section.uk-background-primary
     .uk-container
       h2.uk-text-center Mis ofertas
-    .uk-child-width-1-2.uk-text-center.uk-margin  
+    .uk-child-width-1-2.uk-text-center.uk-margin(class='uk-child-width-expand@s' uk-grid='')  
         +myoffer()
         +myoffer()      
 
