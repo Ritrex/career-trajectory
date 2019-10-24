@@ -1,33 +1,23 @@
-const mongoose=require('mongoose')
-const {Schema,model}=mongoose
+const mongoose = require("mongoose");
+const { Schema, model } = mongoose;
 
-
-const ItemSchema=new Schema({
-  name:{
-    type:String,
+const ItemSchema = new Schema({
+  associated_categories: {
+    type: [String],
+    default: []
+  },
+  event_date: {
+    type: Date,
     required: true
   },
-  associated_categories:{
-    type:[String],
-    default:[]
+  src_url_public: {
+    type: String,
+    required: true
   },
-  price:{
-    type:Number,
-    required:true,
-    default:0
-  },
-  event_date:{
-    type:Date,
-    required:true
-  },
-  src_url_public:{
-    type:String,
-    required:true
-  },
-  src_url_private:{
-    type:String,
-    required:true
+  src_url_private: {
+    type: String,
+    required: true
   }
-})
+});
 
-module.exports=model("Item",ItemSchema)
+module.exports = model("Item", ItemSchema);

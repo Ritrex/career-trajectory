@@ -1,4 +1,4 @@
-mixin auctioncard()
+mixin auctioncard(sale)
   - var rate = 5;
   - var arrRate = [];
   - var limitRate = 4;
@@ -10,7 +10,7 @@ mixin auctioncard()
       .uk-card-media-top
         img(src='https://getuikit.com/docs/images/light.jpg' alt='')
       .uk-card-body
-        h3.uk-card-title.uk-text-left.uk-margin-small-bottom Concierto Iron Maiden
+        h3.uk-card-title.uk-text-left.uk-margin-small-bottom  #{sale.name}
         p.uk-margin-remove-top.uk-text-meta.uk-margin-remove-bottom.uk-text-left 15 Agosto 2019
         h6.uk-margin-remove-top.uk-text-left.uk-margin-small-bottom
           time(datetime='2016-04-01T19:00') Arena Ciudad de México
@@ -19,7 +19,7 @@ mixin auctioncard()
           .uk-width-auto
             img.uk-border-circle(width='40' height='40' src='https://getuikit.com/docs/images/avatar.jpg')
           .uk-width-expand.uk-text-left
-            p.uk-text-meta.uk-margin-remove-bottom Miranda Gómez Palafox Vega Hernández
+            p.uk-text-meta.uk-margin-remove-bottom #{sale.userid.username}
             .card-verified-flag.uk-flex-right.uk-background-primary
               p.uk-text-small.uk-margin-remove-bottom.uk-text-light Verificado
             .rate-stars
@@ -30,7 +30,7 @@ mixin auctioncard()
               img#star1(src='/images/star-off.svg') 
 
           script.
-            console.log('evos')
+            console.log('hola')
             for( var i =; i <= rate ; i ++){
               arrRate.push(true)
             }

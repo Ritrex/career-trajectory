@@ -20,7 +20,7 @@ html(lang="en")
             a(href='/feed') MI FEED
       .uk-navbar-right
         ul.uk-navbar-nav
-          if user 
+          if auth 
             li
               a(href=`/profile/${user._id}`) Usuario 
           else
