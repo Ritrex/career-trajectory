@@ -22,9 +22,12 @@ const salesSchema=new Schema({
   },
   
   prefered_locations:{
-    type:[{type:Schema.Types.ObjectId,}]
-
-  }
+    type:[{type:String,type:String}],
+    maxlength:3
+  },
+  reserved:{
+    type:Boolean,
+    default:false}
 },{timestamps:true})
 
 

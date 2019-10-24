@@ -22,7 +22,7 @@ router.get("/", (req, res, next) => {
     User.populate()
     .then()
     .catch()
-    res.render('index',{sale})
+    res.render('layout',{sale})
   })
   .catch(error=>{
     console.log("NO sales found")

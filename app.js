@@ -1,17 +1,20 @@
-require("dotenv").config();
+require('dotenv').config();
 
-const bodyParser = require("body-parser");
-const cookieParser = require("cookie-parser");
-const express = require("express");
-const favicon = require("serve-favicon");
-const pug = require("pug");
-const mongoose = require("mongoose");
-const logger = require("morgan");
-const path = require("path");
-const passport = require("passport");
-const passport_local = require("passport-local");
-const passport_local_mongoose = require("passport-local-mongoose");
-//const MongoStore = require("connect-mongo")(session);
+const bodyParser   = require('body-parser');
+const cookieParser = require('cookie-parser');
+const express      = require('express');
+const favicon      = require('serve-favicon');
+const pug          = require('pug');
+const mongoose     = require('mongoose');
+const logger       = require('morgan');
+const path         = require('path');
+const express_session=require('express-session')
+const passport     = require('passport')
+const passport_local = require('passport-local')
+const passport_local_mongoose=require('passport-local-mongoose')
+const MongoStore = require("connect-mongo")(express_session);
+const User=require('./models/User')
+
 
 mongoose
   .connect(process.env.DB_Connection, {
@@ -58,16 +61,30 @@ app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 // default value for title local
 app.locals.title = "Express - Generated with IronGenerator";
 
+app.use(express_session({
+  secret:process.env.SECRET,
+  resave:true,
+  saveUninitialized:true,
+  cookie:{maxAge:600000},
+  store: new MongoStore({
+  mongooseConnection: mongoose.connection,
+          ttl: 24 * 3600 
+        })
+}))
+app.use(passport.initialize())
+//app.use(express_session)
+app.use(passport.session())
+
+// LocalStrategy=passport_local.Strategy
+// passport.use(new LocalStrategy(User.createStrategy()))
+// passport.serializeUser(User.serializeUser())
+// passport.use(User.deserializeUser())
 // app.use(
 //   session({
 //     secret: process.env.SECRET,
 //     cookie: { maxAge: 3600000 },
 //     resave: true,
-//     saveUninitialized: true,
-//     store: new MongoStore({
-//       mongooseConnection: mongoose.connection,
-//       ttl: 24 * 60 * 60 // 1 day
-//     })
+//     
 //   })
 // );
 

@@ -23,7 +23,7 @@ const transactionSchema=new Schema({
   state:{
     type:String,
     required:true,
-    enum:['negtiation','to be cofirmed','confirmed']
+    enum:['negotiation','to be cofirmed','confirmed','cancelled']
   }
 })
 
