@@ -1,0 +1,1 @@
+document.forms[0].getElementsByTagName("a")[0].onclick=()=>{document.forms[0].submit()}

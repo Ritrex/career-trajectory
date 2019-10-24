@@ -8,14 +8,14 @@ exports.createSale=(req,res)=>{
     res.redirect('/perfil')
   })
   .catch(error=>{
-    res.render('perfil',error)
+    res.render('perfil')
   })
 }
 
 exports.deleteSale=(req,res)=>{
   let {id}=req.params
   Sale.findByIdAndDelete(id).then(success=>{
-    res.render('perfil')
+    res.redirect('/perfil')
   })
   .then(error=>{
     res.redirect('/perfil')
@@ -27,7 +27,7 @@ exports.updateSale=(req,res)=>{
   let {id}=req.params
   let Sale1 = Sale.findByIdAndUpdate(id,{$set:req.body},{new:true})
   .then(Sale=>
-    res.render('perfil',{Sale:Sale})
+    res.redirect('/perfil')
     )
 }
 
