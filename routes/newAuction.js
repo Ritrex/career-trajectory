@@ -11,5 +11,6 @@ router.post('newAuction',updloader.fields({name:"ticket_full",maxCount:1},
     console.log(fields)
     let {event,event_date,event_arena,min_price,max_price}=req.body
     let {place_one,place_two,place_three}=req.body
+    
 })
 module.exports = router;

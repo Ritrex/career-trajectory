@@ -44,10 +44,8 @@ block content
       p.uk-text-large.uk-dark.uk-text-center Encuentra el evento, artista o recinto que más te interese 
       .uk-grid.uk-grid-medium.uk-text-center(class='uk-child-width-expand@s' uk-grid='')
 
-        +auctioncard()
-        +auctioncard()
-        +auctioncard()
-
+        each sale in sales
+          +auctioncard(sale)
         
         
   section#benefits.uk-section.uk-padding-large
