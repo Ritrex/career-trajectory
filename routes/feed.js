@@ -12,7 +12,7 @@ router.get("/feed", (req, res, next) => {
     .then(sales => {
       console.log(sales);
       // res.status(200).json({ sales });
-      res.render("feed", { sales });
+      res.render("feed", { sales,user:req.user });
     })
     .catch(err => console.log("hay un error en ", err));
   /*let sale = {

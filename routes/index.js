@@ -26,7 +26,7 @@ router.get("/", (req, res, next) => {
     .then(sales => {
       console.log(sales);
       // res.status(200).json({ sales });
-      res.render("index", { sales });
+      res.render("index", { sales,user:req.user });
     })
     .catch(err => console.log("hay un error en ", err));
   /* Sale.findOne()

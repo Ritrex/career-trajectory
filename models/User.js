@@ -41,7 +41,8 @@ const UserSchema=new Schema({
   intereses:{type:[String]},
     foto:{type:String},
     rfc:{type:String},
-    domicilio:{type:String}
+    domicilio:{type:String},
+    verfied:{type:Boolean,default:false}
 },{timestamps:true})
 
 UserSchema.plugin(passpor_local_mongoose,{
