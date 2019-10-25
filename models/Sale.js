@@ -67,8 +67,7 @@ const salesSchema = new Schema(
       type: Boolean,
       default: false
     }
-  },
-  { timestamps: true }
-);
+
+  });
 
 module.exports = model("Sale", salesSchema);

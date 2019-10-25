@@ -26,7 +26,7 @@ router.get("/", (req, res, next) => {
     .then(sales => {
       console.log(sales);
       // res.status(200).json({ sales });
-      res.render("feed", { sales });
+      res.render("index", { sales });
     })
     .catch(err => console.log("hay un error en ", err));
   /* Sale.findOne()
@@ -42,12 +42,12 @@ router.get("/", (req, res, next) => {
   res.render("index", {
     img: cloudinary.url("c5ce4e39f7a4131753bd9255f1cdffc8.jpg")
   });*/
-  res.render("index");
+  //res.render("index");
 });
 
 router.post("/", (req, res) => {
   let { search } = req.body;
-  console.log(search.split(" "));
+  console.log(search, search.split(","));
   res.redirect("/", 200);
 });
 module.exports = router;

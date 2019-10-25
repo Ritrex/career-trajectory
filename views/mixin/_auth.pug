@@ -1,11 +1,11 @@
 mixin auth(data,issignup=false,isedit=false)
 
-    form(action=`/${issignup?"login":'signup'}}` method='post')
+    form(action=`/${issignup?'signup':"login"}` method='post')
     
         .form-group
-            if issignup || isedit
-                label(for='email') Email
-                input.form-control(type='email', name='email' placeholder='Email' )
+            
+            label(for='email') Email
+            input.form-control(type='email', name='email' placeholder='Email' )
             label(for='name') Name
             input.form-control(type='text', name='name' placeholder='Name' autofocus=true)
             label(for='password') Password
@@ -15,7 +15,7 @@ mixin auth(data,issignup=false,isedit=false)
                 input.form-control(type="password", name="conf_password")   
                 
                 <form action="/profile" method="post" enctype="multipart/form-data"> Subir Identificación
-                    <input type="file" name="photo" /> 
+                    <input type="file" name="foto" /> 
                 </form>
                 label(for='telefono') Telefono (opcional)
                 input.form-control(type='telefono', name='telefono')
@@ -26,4 +26,4 @@ mixin auth(data,issignup=false,isedit=false)
                 label(for='intereses') Intereses
                 input.form-control(type='textarea', name='intereses')
             
-        button.btn.btn-primary(type='submit')=(isedit?"Editar":(issignup?"Registrarse":"Login"))
+            button.btn.btn-primary(type='submit')=(isedit?"Editar":(issignup?"Registrarse":"Login"))
