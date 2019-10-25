@@ -47,5 +47,9 @@ module.exports.getSale=(req,res)=>{
 
 
 module.exports.getRandomSales=()=>{
-  Sale.find().limit(3)
+  return Sale.find()
+    .limit(3)
+    .populate("userid")
+    .sort({ createdAt: -1 })
+    
 }

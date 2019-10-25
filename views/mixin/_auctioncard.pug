@@ -19,7 +19,7 @@ mixin auctioncard(sale)
           .uk-width-auto
             img.uk-border-circle(width='40' height='40' src='https://getuikit.com/docs/images/avatar.jpg')
           .uk-width-expand.uk-text-left
-            p.uk-text-meta.uk-margin-remove-bottom #{sale.userid.username}
+            p.uk-text-meta.uk-margin-remove-bottom #{(sale.userid?sale.userid.username:"ERROR")}
             .card-verified-flag.uk-flex-right.uk-background-primary
               p.uk-text-small.uk-margin-remove-bottom.uk-text-light Verificado
             .rate-stars
