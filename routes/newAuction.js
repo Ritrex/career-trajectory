@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const updloader=require('../helpers/upload')
 /* GET home page */
-router.get("/newAuction", (req, res, next) => {
+router.get("/newAuction/new", (req, res, next) => {
   res.render("newAuction");
 });
 

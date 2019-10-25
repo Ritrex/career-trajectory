@@ -1,14 +1,15 @@
 const mongoose = require("mongoose");
 const { Schema, model } = mongoose;
 
-const ItemSchema = new Schema({
-  associated_categories: {
-    type: [String],
-    default: []
+
+const ItemSchema=new Schema({
+  associated_categories:{
+    type:[String],
+    default:[]
   },
-  event_date: {
-    type: Date,
-    required: true
+  event_date:{
+    type:Date,
+    required:true
   },
   src_url_public: {
     type: String,

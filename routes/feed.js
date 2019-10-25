@@ -32,6 +32,10 @@ router.get("/feed", (req, res, next) => {
       horario: "13:30"
     }
   };
+  console.log('req.user',req.user)
+  res.render("feed",{user:req.user});
+});
+
 
   Sale.create({ ...sale })
     .then(() => {

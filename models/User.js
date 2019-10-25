@@ -44,7 +44,10 @@ const UserSchema=new Schema({
     domicilio:{type:String}
 },{timestamps:true})
 
-UserSchema.plugin(passpor_local_mongoose)
+UserSchema.plugin(passpor_local_mongoose,{
+  usernameField:"email",
+  hashField:"password"
+})
 
 
 module.exports=model("User",UserSchema)
