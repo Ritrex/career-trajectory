@@ -40,11 +40,6 @@ router.get("/feed", (req, res, next) => {
       let otrasrand = valores[1];
       let misofer = valores[2];
       res.render(feed, { misvent, misofer, otrasrand });
-    .sort({ createdAt: -1 })
-    .then(sales => {
-      console.log(sales);
-      // res.status(200).json({ sales });
-      res.render("feed", { sales,user:req.user });
     })
     .catch(err => {
       res.redirect("/error");

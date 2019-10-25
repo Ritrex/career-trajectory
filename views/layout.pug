@@ -15,13 +15,14 @@ html(lang="en")
       .uk-navbar-left
         ul.uk-navbar-nav
           li.uk-active
-            a(href='/') LOGO
+            img.logo(src="/images/logo-sc.svg", alt="")(href='/feed')
           if user
             li
               a(href='/feed') MI FEED
       .uk-navbar-right
         ul.uk-navbar-nav
-          if user 
+          if user
+            p Juanito Pérez
             if infeed
               li 
                 a(href=`/newAuction/new`) Vender
@@ -46,7 +47,7 @@ html(lang="en")
 
   footer.uk-section.uk-section-secondary.uk-light.uk-padding-small
     .uk-container.uk-align-center.uk-text-center
-      h3.uk-margin-small-bottom Logo
+      //img.logo-footer(src="/images/logo-sc.svg", alt="")
       p.uk-margin-remove-top Proyecto de Ro & Nan hecho con mucho &#10084;&#65039; y cariño para su segundo módulo en Ironhack.     
 
   script(src="/javascripts/script.js")
