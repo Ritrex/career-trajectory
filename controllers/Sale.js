@@ -3,8 +3,10 @@ const Sale=require('../models/Sale')
 
 exports.createSale=(req,res)=>{
   let {prefered_locations,end_date,itemid,userid}=req.body
-   Sale.create({prefered_locations,end_date,itemid,userid})
+  let item = createItem(req,res)
+   Sale.create({prefered_locations,end_date,item,userid})
   .then(sucess=>{
+    sucess.item=item
     res.redirect('/perfil')
   })
   .catch(error=>{

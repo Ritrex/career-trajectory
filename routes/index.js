@@ -19,15 +19,15 @@ https://res.cloudinary.com/dgxxe9vi3/image/upload/v1570586894/test/c5ce4e39f7a41
 */
 router.get("/", (req, res, next) => {
   console.log(req.session)
-  Sale.findOne().populate('userid').populate('itemid')
+  Sale.find().limit(3).populate('userid').populate('itemid')
   .then(sale=>{ 
-    res.render('layout',{sale})
+    res.render('index',{sales:sale,user:req.user})
   })
   .catch(error=>{
     console.log("NO sales found")
     res.render('index',{error}) 
   })
-  res.render('index',{img:cloudinary.url('c5ce4e39f7a4131753bd9255f1cdffc8.jpg')})
+  //res.render('index',{img:cloudinary.url('c5ce4e39f7a4131753bd9255f1cdffc8.jpg')})
 });
 
 router.post("/",(req,res)=>{

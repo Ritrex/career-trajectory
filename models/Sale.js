@@ -38,9 +38,14 @@ const salesSchema=new Schema({
     default:Date.now(),
     required:true
   },
+
+  
   bids:{type:[{type:Schema.Types.ObjectId}],
         ref:'Bid',
         default:[]},
+
+
+
   prefered_locations:{
     type:[
       {

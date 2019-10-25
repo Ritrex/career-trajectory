@@ -12,9 +12,9 @@ const upload=require('../helpers/upload')
 
 //Missing: Make sure user is no logged in
 router.get('/signup',(req,res)=>{
-  console.log(req.session.user)
-  if(!req.session.user)
-    res.render('signup')
+  console.log(req.user)
+  if(!req.user)
+    res.render('signup',)
   else{
     res.redirect('/')
   }
@@ -32,12 +32,12 @@ router.post('/signup',upload.single('foto'),(req,res)=>{
   
   let username= name
   
-  User.register({username, email},password).then(succ=>{
+  User.register({username, email,},password).then(succ=>{
     console.log('SUCCESS!',succ)
-    res.render('index',{succ})
+    res.render('index',{user:succ})
   })
   .catch(error=>{
-    console.log('lo que quier',error)
+    console.log('fallo al insertar',error)
     res.render('signup')
   })
   //User.create({username,password,conf_password,telefono,rfc,domicilio,intereses})
