@@ -1,9 +1,11 @@
-$primary: #1bcfd8;
-$darker: #2a608e;
+$primary: #2a1a5e;
+$blue-darker: #261c48;
+$secondary: #f45905;
+$orange-light: #fb9224;
 $white: #ffffff;
 $comfortaa: "Comfortaa";
-$light-grey: #cbcbcb;
-$lighter-grey: #f9f9f9;
+$light-grey: #bdbdbd;
+$lighter-grey: #f0f0f0;
 
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -21,8 +23,11 @@ h5,
 h6 {
   font-family: "Patua One", cursive !important;
 }
+h2 {
+  font-size: 2.3rem !important;
+}
 h5 time {
-  color: $darker !important;
+  color: $blue-darker !important;
 }
 p {
   font-family: "Comfortaa", cursive !important;
@@ -32,7 +37,7 @@ label {
   font-family: "Comfortaa", cursive !important;
 }
 footer {
-  background-color: $darker !important;
+  background-color: $primary !important;
 }
 nav {
   display: flex;
@@ -63,8 +68,11 @@ nav {
 .star-off {
   fill: $light-grey;
 }
-.money {
+.text-primary {
   color: $primary !important;
+}
+.money {
+  color: $secondary !important;
   font-weight: bolder !important;
   font-family: "Comfortaa", cursive !important;
 }
@@ -88,7 +96,8 @@ nav {
   font-weight: 600;
 }
 .uk-text-large {
-  font-size: 1.2rem !important;
+  font-size: 1.4rem !important;
+  font-weight: 800 !important;
 }
 .uk-text-small {
   font-size: 0.75em !important;
@@ -98,4 +107,21 @@ nav {
   font-size: 0.75rem !important;
   margin-bottom: 5px !important;
   display: flex !important;
+}
+.uk-button-secondary {
+  background-color: $secondary !important;
+  color: $white !important;
+  font-weight: bolder !important;
+}
+.uk-card-title {
+  font-size: 1.6rem !important;
+}
+.uk-label {
+  background-color: $primary !important;
+  font-family: $comfortaa !important;
+  font-weight: 900 !important;
+  padding: 4px 9px !important;
+}
+.uk-overlay-primary {
+  background: rgba(34, 34, 34, 0.6) !important;
 }

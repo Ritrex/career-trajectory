@@ -5,7 +5,7 @@ mixin auctioncard(sale)
   - var i = 1;
 
 
-  div
+  div.uk-margin-small-top
     .uk-card.uk-card-default
       .uk-card-media-top
         img(src='https://getuikit.com/docs/images/light.jpg' alt='')
@@ -13,13 +13,14 @@ mixin auctioncard(sale)
         h3.uk-card-title.uk-text-left.uk-margin-small-bottom  #{sale.name}
 
 
-        p.uk-margin-remove-top.uk-text-meta.uk-margin-small-bottom.uk-text-left #{sale.item.event_date}
+        p.uk-margin-remove-top.uk-margin-small-bottom.uk-text-left #{sale.item.event_date}
+        h3.uk-card-title.uk-text-left.uk-margin-remove-top.uk-margin-small-bottom.money $#{sale.min_price} - $#{sale.max_price}
         h5.uk-margin-remove-top.uk-text-left.uk-margin-small-bottom
           time(datetime='2016-04-01T19:00') #{sale.arena}
-        h3.uk-card-title.uk-text-left.uk-margin-remove-top.uk-margin-small-bottom.money $#{sale.min_price} - $#{sale.max_price}
+        //h3.uk-card-title.uk-text-left.uk-margin-remove-top.uk-margin-small-bottom.money $#{sale.min_price} - $#{sale.max_price}
         .uk-grid-small.uk-flex-left(uk-grid='')
           .uk-width-auto
             img.uk-border-circle(width='60' height='60' src='/images/man.png')
           .uk-width-expand.uk-text-left
-            p.uk-text-meta.uk-margin-small-bottom #{sale.userid.username}
-            span.uk-label Validado
+            p.uk-text.uk-margin-small-bottom #{sale.userid.username}
+            span.uk-label Vendedor
