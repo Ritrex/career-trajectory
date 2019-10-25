@@ -5,7 +5,7 @@ include mixin/_auctioncard
 block content
 
   .uk-position-relative.uk-visible-toggle.uk-light(tabindex='-1' uk-slideshow='ratio: false;animation: push')
-    ul.uk-slideshow-items(uk-height-viewport="offset-top: true")
+    ul.uk-slideshow-items(uk-height-viewport="offset-top: true")  
       li
         video(src='https://res.cloudinary.com/dr95kad7s/video/upload/v1571461370/slideshow-video-1.mp4' autoplay='' loop='' muted='' playsinline='' uk-cover='')
         .uk-overlay-primary.uk-position-cover
@@ -43,11 +43,8 @@ block content
       h2.uk-text-center Gran variedad de eventos
       p.uk-text-large.uk-dark.uk-text-center Encuentra el evento, artista o recinto que más te interese 
       .uk-grid.uk-grid-medium.uk-text-center(class='uk-child-width-expand@s' uk-grid='')
-
-        +auctioncard()
-        +auctioncard()
-        +auctioncard()
-
+        each sale in sales
+          +auctioncard(sale)
         
         
   section#benefits.uk-section.uk-padding-large

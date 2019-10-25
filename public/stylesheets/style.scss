@@ -1,5 +1,5 @@
-$primary: #900ca9;
-$darker: #3b0b44;
+$primary: #1bcfd8;
+$darker: #2a608e;
 $white: #ffffff;
 $comfortaa: "Comfortaa";
 $light-grey: #cbcbcb;
@@ -20,6 +20,9 @@ h4,
 h5,
 h6 {
   font-family: "Patua One", cursive !important;
+}
+h5 time {
+  color: $darker !important;
 }
 p {
   font-family: "Comfortaa", cursive !important;
@@ -59,6 +62,11 @@ nav {
 }
 .star-off {
   fill: $light-grey;
+}
+.money {
+  color: $primary !important;
+  font-weight: bolder !important;
+  font-family: "Comfortaa", cursive !important;
 }
 .new-auct-instructions,
 .new-auct-instructions p,

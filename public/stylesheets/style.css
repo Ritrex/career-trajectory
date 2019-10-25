@@ -12,6 +12,9 @@ h5,
 h6 {
   font-family: "Patua One", cursive !important; }
 
+h5 time {
+  color: #2a608e !important; }
+
 p {
   font-family: "Comfortaa", cursive !important;
   line-height: 1.8em; }
@@ -20,7 +23,7 @@ label {
   font-family: "Comfortaa", cursive !important; }
 
 footer {
-  background-color: #3b0b44 !important; }
+  background-color: #2a608e !important; }
 
 nav {
   display: flex;
@@ -51,6 +54,11 @@ nav {
 .star-off {
   fill: #cbcbcb; }
 
+.money {
+  color: #1bcfd8 !important;
+  font-weight: bolder !important;
+  font-family: "Comfortaa", cursive !important; }
+
 .new-auct-instructions,
 .new-auct-instructions p,
 .new-auct-instructions a {
@@ -58,11 +66,11 @@ nav {
   margin: 10px 0px; }
 
 .new-auct-instructions a {
-  color: #900ca9; }
+  color: #1bcfd8; }
 
 /* UIKIT styles tropicalized */
 .uk-navbar-container {
-  background-color: #900ca9 !important; }
+  background-color: #1bcfd8 !important; }
 
 .uk-navbar-nav li a {
   color: #ffffff !important;
@@ -76,7 +84,7 @@ nav {
   font-size: 0.75em !important; }
 
 .uk-form-label {
-  color: #900ca9 !important;
+  color: #1bcfd8 !important;
   font-size: 0.75rem !important;
   margin-bottom: 5px !important;
   display: flex !important; }

@@ -1,4 +1,6 @@
 extends layout
+include mixin/_auctioncard
+include mixin/_myoffer
 block content
 
     .uk-height-medium.uk-flex.uk-flex-center.uk-flex-middle.uk-flex-column.uk-background-cover.uk-light.uk-overlay.uk-overlay-primary(data-src='https://getuikit.com/docs/images/photo.jpg' uk-img='')
@@ -17,12 +19,6 @@ block content
               .uk-card-badge.uk-label(style='') Verificado
               p.uk-text-meta.uk-margin-remove
                 time(datetime='2016-04-01T19:00') April 01, 2016
-              .rateStars
-                img(src='./images/star.svg' style='width: 22px; margin-right: 2px;')
-                img(src='./images/star.svg' style='width: 22px; margin-right: 2px;')
-                img(src='./images/star.svg' style='width: 22px; margin-right: 2px;')
-                img(src='./images/star.svg' style='width: 22px; margin-right: 2px;')
-                img(src='./images/star.svg' style='width: 22px; margin-right: 2px;')
           h3.uk-card-title $900 - $1200
           p
             | Lorem ipsum color sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

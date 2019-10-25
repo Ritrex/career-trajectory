@@ -1,9 +1,6 @@
 extends layout
-
 include mixin/_auctioncard
-
 include mixin/_myoffer
-
 block content
 
   .uk-height-medium.uk-flex.uk-flex-center.uk-flex-middle.uk-flex-column.uk-background-cover.uk-light.uk-overlay.uk-overlay-primary(data-src='https://getuikit.com/docs/images/photo.jpg' uk-img='')
@@ -20,7 +17,7 @@ block content
     .uk-container
       h2.uk-text-center Te puede interesar
       p.uk-text-large.uk-dark.uk-text-center.uk-margin-large-bottom Te recomendamos eventos relacionados con tus últimas búsquedas
-      .uk-grid.uk-grid-medium.uk-text-center(class='uk-child-width-expand@s' uk-grid='')
+      .uk-grid.uk-grid-medium.uk-text-center(class='uk-child-width-expand@s' uk-grid='' uk-height-match='target: .uk-card')
         each sale in sales
           +auctioncard(sale)
           
@@ -28,8 +25,8 @@ block content
     .uk-container
       h2.uk-text-center Mis ofertas
     .uk-child-width-1-2.uk-text-center.uk-margin(class='uk-child-width-expand@s' uk-grid='')  
-        +myoffer()
-        +myoffer()      
+        // each bid in bids 
+          +myoffer(bid)  
 
   section.uk-section
     .uk-container
@@ -40,22 +37,22 @@ block content
     .uk-container.uk-padding-large.uk-grid-match.uk-margin-remove-top.uk-text-center(class='uk-child-width-1-4@s' uk-grid='')
       div
         .uk-card.uk-card-body
-          img(src="/images/bank.svg" width="80" alt="Busca eventos" uk-svg)
+          img(src="/images/id-card.svg" width="80" alt="Busca eventos" uk-svg)
           h4 Identidad
           p Si el vendedor es "Verificado", estás intercambiando con alguien de confianza          
       div
         .uk-card.uk-card-body
-          img(src="/images/bank.svg" width="80" alt="Busca eventos" uk-svg)
+          img(src="/images/concert.svg" width="80" alt="Busca eventos" uk-svg)
           h4 Evento
           p Valida que los datos proporcionados por el usuario coincidan con los de la foto del boleto 
       div
         .uk-card.uk-card-body
-          img(src="/images/bank.svg" width="80" alt="Busca eventos" uk-svg)
+          img(src="/images/money.svg" width="80" alt="Busca eventos" uk-svg)
           h4 Precio
           p Revisa que el vendedor solicite como máximo el costo original del boleto
       div
         .uk-card.uk-card-body
-          img(src="/images/bank.svg" width="80" alt="Busca eventos" uk-svg)
+          img(src="/images/thumbs-up.svg" width="80" alt="Busca eventos" uk-svg)
           h4 Seguimiento
           p Verifica tu correo, así podremos darle el seguimiento correcto a tu intercambio
                           
