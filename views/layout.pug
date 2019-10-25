@@ -16,14 +16,15 @@ html(lang="en")
         ul.uk-navbar-nav
           li.uk-active
             a(href='/') LOGO
-          li
-            a(href='/feed') MI FEED
+          if user
+            li
+              a(href='/feed') MI FEED
       .uk-navbar-right
         ul.uk-navbar-nav
           if user 
             if infeed
               li 
-              a(href=`/newAuction/new`) Vender
+                a(href=`/newAuction/new`) Vender
             
             li
               a(href=`/profile/${user._id}`) Usuario

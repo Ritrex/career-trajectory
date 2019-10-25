@@ -10,9 +10,12 @@ const cloudinary=require('cloudinary')
 router.get('/profile/:userid',(req,res)=>{
   let {userid}=req.params
   User.findById(userid)
-  .then()
+  .then(user=>{
+
+    res.render('signup',{isedit:true,user})
+  })
   .catch(error=>{
-    res.render()
+    res.redirect('/')
   })
 })
 router.get('/profile/:userid/edit',(req,res)=>{

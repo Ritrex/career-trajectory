@@ -3,13 +3,8 @@ const item = require('../models/Item')
 
 exports.createItem=(req,res)=>{
   let {name,price,associated_categories,event_date,src_url_public,src_url_private}=req.body
-  item.create({name,price,associated_categories,event_date,src_url_public,src_url_private})
-  .then(sucess=>{
-    res.redirect('/perfil')
-  })
-  .catch(error=>{
-    res.render('item',error)
-  })
+  let ite ={name,price,associated_categories,event_date,src_url_public:"",src_url_private:""}
+  return ite
 }
 
 exports.deleteItem=(req,res)=>{
