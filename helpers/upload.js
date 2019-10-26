@@ -1,4 +1,4 @@
-const express=require('express')
+
 const cloudinary=require('cloudinary')
 const multer=require('multer')
 const multer_cloud=require('multer-storage-cloudinary')
@@ -11,12 +11,12 @@ cloudinary.config({
 
 const storage=multer_cloud({
   cloudinary,
-  folder:"uploads",
+  folder:"test",
   allowedFormats:["jpg","png","jpeg","bmp"],
-  filename: function(req,res,file){
+  filename: function(req,file,cb){
     cb(null,file.orginalname)
   }
-
+  
 })
 
 
