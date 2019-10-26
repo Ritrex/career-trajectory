@@ -23,11 +23,10 @@ html(lang="en")
       .uk-navbar-right
         ul.uk-navbar-nav
           if user
-            li
-              #{user.username}
-            if infeed
-              li 
-                a(href=`/newAuction/new`) Vender
+            p Juanito Pérez
+            
+            li 
+              a(href=`/newAuction/new`) Vender
             
             li
               a(href=`/profile/${user._id}`) Usuario

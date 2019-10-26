@@ -33,7 +33,7 @@ const debug = require("debug")(
 
 const app = express();
 
-// Middleware Setup
+// Middleware Setup a
 app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -73,7 +73,6 @@ app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 app.locals.title = "Express - Generated with IronGenerator";
 
 
-
 const index = require("./routes/index");
 const newAuct = require("./routes/newAuction");
 const auctDetail = require("./routes/detail");
@@ -90,6 +89,6 @@ app.use("/", auth);
 app.use("/", item);
 app.use("/", profile);
 app.use("/", sales);
-//Ro
+//R
 
 module.exports = app;
