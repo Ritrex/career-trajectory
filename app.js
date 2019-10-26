@@ -72,36 +72,6 @@ app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 // default value for title local
 app.locals.title = "Express - Generated with IronGenerator";
 
-<<<<<<< HEAD
-app.use(express_session({
-  secret:process.env.SECRET,
-  resave:true,
-  saveUninitialized:true,
-  cookie:{maxAge:600000},
-  store: new MongoStore({
-  mongooseConnection: mongoose.connection,
-          ttl: 24 * 3600 
-        })
-}))
-app.use(passport.initialize())
-//app.use(express_session)
-app.use(passport.session())
-//hola
-// LocalStrategy=passport_local.Strategy
-// passport.use(new LocalStrategy(User.createStrategy()))
-// passport.serializeUser(User.serializeUser())
-// passport.use(User.deserializeUser())
-// app.use(
-//   session({
-//     secret: process.env.SECRET,
-//     cookie: { maxAge: 3600000 },
-//     resave: true,
-//     
-//   })
-// );
-=======
-
->>>>>>> 20e4b813cc1717330bed19efb7ecc036dc7f8312
 
 const index = require("./routes/index");
 const newAuct = require("./routes/newAuction");
