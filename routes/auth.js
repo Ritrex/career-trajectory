@@ -21,7 +21,7 @@ router.get("/signup", (req, res) => {
 
 router.post("/signup", upload.single("foto"), (req, res) => {
   let {
-    name,
+    username,
     password,
     conf_password,
     email,
@@ -39,7 +39,7 @@ router.post("/signup", upload.single("foto"), (req, res) => {
   if (password !== conf_password) res.render("signup", { error: "" });
   //VAlidación aquí
 
-  let username = name;
+
 
   User.register({ username, email }, password)
     .then(succ => {
@@ -64,6 +64,7 @@ router.post("/login", (req, res) => {
   //passport.authenticate
   //req.use={username:name,password}
   //console.log(passport.)
+  console.log('esto ',req.body)
   passport.authenticate("local", (err, user, info = {}) => {
     const { message: errorMessage } = info;
     console.log("logged ", err, user, info);

@@ -8,11 +8,11 @@ mixin auth(data,issignup=false,isedit=false)
                 //-p.uk-margin-remove.uk-text-center.uk-text-large Coloca tus datos para ingresar
                 .form-group.uk-margin-medium.uk-margin-medium-bottom
 
-                    form(action=`/${issignup?'signup':(isedit?`profile/${user._id}/edit`:"login")}` method='post' enctype="")
+                    form(action=`/${issignup?'signup':(isedit?`profile/${user._id}/edit`:"login")}` method='post' enctype=(isedit||issignup)?"multipart/form-data":"")
                         if issignup
                             .uk-margin
                                 .uk-inline.uk-width-1-1
-                                    input.uk-input.uk-form-medium(type='text', name='name' placeholder='Nombre' value=`${isedit?user.username:""}` autofocus=true)
+                                    input.uk-input.uk-form-medium(type='text', name='username' placeholder='Nombre' value=`${isedit?user.username:""}` autofocus=true)
                         .uk-margin
                             .uk-inline.uk-width-1-1    
                                 input.uk-input.uk-form-medium(type='email', name='email' placeholder='Correo')   
