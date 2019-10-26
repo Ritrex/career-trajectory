@@ -30,4 +30,33 @@ mixin auth(data,issignup=false,isedit=false)
         if edit
             form(action=`/profile/${user._id}/delete` method="post")
                 button.btn.btn-primary(type='submit') Borrar
-                    
+
+                
+
+
+//- LO MIO CON DISEÑO
+    .uk-width-1-1
+        .uk-container
+        .uk-grid-margin.uk-grid.uk-grid-stack(uk-grid='')
+            .uk-container(class='uk-width-1-1@m')
+            .uk-margin.uk-width-large.uk-margin-auto.uk-card.uk-card-default.uk-card-body.uk-box-shadow-large
+                //- img(src="/images/logo-sc.svg", alt="", width="100px")
+                h1.uk-text-center ¡Bienvenido!
+                p.uk-margin-remove.uk-text-center.uk-text-large Coloca tus datos para ingresar a la plataforma
+                .form-group.uk-margin-medium.uk-margin-medium-bottom
+                    form(action=`/${issignup?'signup':"login"}` method='post')
+                        .uk-margin
+                            .uk-inline.uk-width-1-1
+                            //span.uk-form-icon(uk-icon='icon: heart')
+                            input.uk-input.uk-form-large(type='email', name='email' placeholder='Email' )                       
+                        .uk-margin
+                            .uk-inline.uk-width-1-1
+                            //span.uk-form-icon(uk-icon='icon: mail')
+                            input.uk-input.uk-form-large(type='text', name='name' placeholder='Name' autofocus=true)   
+                        .uk-margin
+                            .uk-inline.uk-width-1-1
+                            //span.uk-form-icon(uk-icon='icon: lock')
+                            input.uk-input.uk-form-large(type='password', name='password' placeholder='Password')
+                        .uk-margin
+                            button.uk-button.uk-button-secondary.uk-button-large.uk-width-1-1(type='submit')=(isedit?"Editar":(issignup?"Registrarse":"Ingresar"))
+

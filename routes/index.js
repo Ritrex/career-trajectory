@@ -72,9 +72,9 @@ router.get("/", (req, res, next) => {
   //res.render("index");
 });
 
-router.post("/",(req,res)=>{
-  let {search}=req.body
-  console.log(search,search.split(','))
-  res.redirect("/",200)
-})
+router.post("/", (req, res) => {
+  let { search } = req.body;
+  console.log(search, search.split(","));
+  res.redirect("/", 200);
+});
 module.exports = router;
