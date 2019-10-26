@@ -1,61 +1,48 @@
 mixin auth(data,issignup=false,isedit=false)
-
-    form(action=`/${issignup?'signup':(isedit?`profile/${user._id}/edit`:"login")}` method='post' enctype=(isedit||issignup)?"multipart/form-data":"")
-    
-        .form-group
-            
-            label(for='email') Email
-            input.form-control(type='email', name='email' placeholder='Email' )
-           
-            label(for='password') Password
-            input.form-control(type='password', name='password')
-            if issignup || isedit
-                label(for='conf_password') Confirm Password
-                input.form-control(type="password", name="conf_password")   
-                label(for='intereses') Intereses
-                input.form-control(type="textarea" name="intereses")
-            if isedit   
-                label(for="foto")
-                input(type="file" name="foto" )
-                
-                label(for='telefono') Telefono (opcional)
-                input.form-control(type='telefono', name='telefono')
-                label(for='rfc') RFC (opcinal)
-                input.form-control(type='text', name='rfc' value=`${isedit?user.username:""}`)
-                label(for='domicilio') Domicilio
-                input.form-control(type='text', name='domicilio' value=`${isedit?user.username:""}`)
-                
-            button.btn.btn-primary(type='submit')=(isedit?"Editar":(issignup?"Registrarse":"Login"))
-        if edit
-            form(action=`/profile/${user._id}/delete` method="post")
-                button.btn.btn-primary(type='submit') Borrar
-
-                
-
-
-//- LO MIO CON DISEÑO
     .uk-width-1-1
         .uk-container
         .uk-grid-margin.uk-grid.uk-grid-stack(uk-grid='')
             .uk-container(class='uk-width-1-1@m')
-            .uk-margin.uk-width-large.uk-margin-auto.uk-card.uk-card-default.uk-card-body.uk-box-shadow-large
-                //- img(src="/images/logo-sc.svg", alt="", width="100px")
+            .uk-margin.uk-width-large.uk-margin-auto.uk-card.uk-card-default.uk-card-body.uk-box-shadow-large.uk-margin-medium-bottom
                 h1.uk-text-center ¡Bienvenido!
-                p.uk-margin-remove.uk-text-center.uk-text-large Coloca tus datos para ingresar a la plataforma
+                //-p.uk-margin-remove.uk-text-center.uk-text-large Coloca tus datos para ingresar
                 .form-group.uk-margin-medium.uk-margin-medium-bottom
-                    form(action=`/${issignup?'signup':"login"}` method='post')
-                        .uk-margin
-                            .uk-inline.uk-width-1-1
-                            //span.uk-form-icon(uk-icon='icon: heart')
-                            input.uk-input.uk-form-large(type='email', name='email' placeholder='Email' )                       
-                        .uk-margin
-                            .uk-inline.uk-width-1-1
-                            //span.uk-form-icon(uk-icon='icon: mail')
-                            input.uk-input.uk-form-large(type='text', name='name' placeholder='Name' autofocus=true)   
-                        .uk-margin
-                            .uk-inline.uk-width-1-1
-                            //span.uk-form-icon(uk-icon='icon: lock')
-                            input.uk-input.uk-form-large(type='password', name='password' placeholder='Password')
-                        .uk-margin
-                            button.uk-button.uk-button-secondary.uk-button-large.uk-width-1-1(type='submit')=(isedit?"Editar":(issignup?"Registrarse":"Ingresar"))
 
+                    form(action=`/${issignup?'signup':(isedit?`profile/${user._id}/edit`:"login")}` method='post' enctype=(isedit||issignup)?"multipart/form-data":"")
+                        if issignup
+                            .uk-margin
+                                .uk-inline.uk-width-1-1
+                                    input.uk-input.uk-form-medium(type='text', name='username' placeholder='Nombre' value=`${isedit?user.username:""}` autofocus=true)
+                        .uk-margin
+                            .uk-inline.uk-width-1-1    
+                                input.uk-input.uk-form-medium(type='email', name='email' placeholder='Correo')   
+                        .uk-margin
+                            .uk-inline.uk-width-1-1
+                                input.uk-input.uk-form-medium(type='password', name='password' placeholder='Contraseña')     
+                        if issignup || isedit
+                            .uk-margin
+                                .uk-inline.uk-width-1-1    
+                                    input.uk-input.uk-form-medium(type="password", name="conf_password" placeholder='Confirmar contraseña')   
+                            .uk-margin
+                                .uk-inline.uk-width-1-1    
+                                    input.uk-input.uk-form-medium(type="textarea" name="intereses" placeholder='Intereses')
+                                    p.uk-text-small Ingresa tus intereses separados por comas y guión medio (Ej. "iron-maiden, teatro")
+                        if isedit   
+                            .uk-margin
+                                .uk-inline.uk-width-1-1    
+                                    input.uk-input.uk-form-medium(type="file" name="foto" placeholder="Foto")   
+                            .uk-margin
+                                .uk-inline.uk-width-1-1    
+                                    input.uk-input.uk-form-medium(type='telefono', name='telefono' placeholder='Teléfono')
+                            .uk-margin
+                                .uk-inline.uk-width-1-1    
+                                    input.uk-input.uk-form-medium(type='text', name='rfc' placeholder="RFC" value=`${isedit?user.username:""}`)
+                            .uk-margin
+                                .uk-inline.uk-width-1-1    
+                                    input.uk-input.uk-form-medium(type='text', name='domicilio' placeholder="Domicilio" value=`${isedit?user.username:""}`)
+                            
+                        button.uk-button.uk-button-secondary.uk-button-large.uk-width-1-1(type='submit')=(isedit?"Editar":(issignup?"Registrarme":"Login"))
+                    if edit
+                        form(action=`/profile/${user._id}/delete` method="post")
+                            button.uk-button.uk-button-secondary.uk-button-large.uk-width-1-1(type='submit') Borrar
+                                

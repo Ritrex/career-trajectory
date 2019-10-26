@@ -39,7 +39,7 @@ router.get("/feed", (req, res, next) => {
       let misvent = valores[0];
       let otrasrand = valores[1];
       let misofer = valores[2];
-      res.render("feed", { misvent, misofer, otrasrand });
+      res.render("feed", { misvent, misofer, otrasrand, user: req.user });
     })
     .catch(err => {
       res.redirect("/error");
