@@ -44,7 +44,8 @@ router.post("/signup", upload.single("foto"), (req, res) => {
   User.register({ username, email }, password)
     .then(succ => {
       console.log("SUCCESS!", succ);
-      res.render("index", { user: succ });
+      res.redirect("/login");
+      //res.render("index", { user: succ });
     })
     .catch(error => {
       console.log("fallo al insertar", error);
