@@ -4,6 +4,13 @@ body {
 a {
   color: #527988; }
 
+a:hover {
+  text-decoration: none !important; }
+
+a:hover .uk-card {
+  box-shadow: 0 5px 15px rgba(0, 20, 255, 0.4) !important;
+  transition: 0.4s ease-in-out; }
+
 h1,
 h2,
 h3,
@@ -29,6 +36,11 @@ p {
 
 img.logo {
   width: 200px; }
+
+.third {
+  width: 30.333% !important;
+  display: inline-block;
+  margin-right: 3%; }
 
 .logo-footer {
   padding: 10px;

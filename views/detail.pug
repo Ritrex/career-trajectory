@@ -6,21 +6,21 @@ block content
     
     .uk-background-blend-multiply.uk-background-primary.uk-background-cover.uk-height-medium.uk-panel.uk-flex.uk-flex-center.uk-flex-middle.uk-light(data-src='/images/event-header.jpg' uk-img='')
       .uk-overlay.uk-overlay-primary.uk-text-center
-        h1.uk-margin-remove Nombre del evento
-        h2.uk-margin-small 13 de Enero 2019
-        h5.uk-margin-remove Palacio de los deportes
+        h1.uk-margin-remove #{sales.name}
+        h2.uk-margin-small #{moment(sales.item.event_date).format('DD-MM-YYYY')}
+        h5.uk-margin-remove #{sales.item.event_arena ? sales.item.event_arena : "sin confirmar" }
 
     div.uk-container.uk-container-large.uk-padding-large(class='uk-child-width-1-2@s' uk-grid='')
       div
         .uk-card.uk-card-default.uk-card-body.uk-padding-medium.uk-text-center
           .uk-width-auto
               img.uk-border-circle(width='150' height='150' src='/images/man.png')
-          h3.uk-card-title.uk-margin-remove-bottom Nombre del usuario que vende
+          h3.uk-card-title.uk-margin-remove-bottom #{sales.userid.username}
           .uk-card-badge.uk-label(style='') Vendedor
           p.uk-text-meta.uk-margin-small-top
-                time(datetime='2016-04-01T19:00') April 01, 2016
+                time(datetime='2016-04-01T19:00') #{moment(sales.userid.createdAt).format('DD-MM-YYYY')}
           h4.uk-margin-small-top.uk-margin-remove-bottom.text-primary Rango de precio
-          p.uk-text-lead.money.uk-margin-remove-top $1090 - $1500
+          p.uk-text-lead.money.uk-margin-remove-top $#{sales.min_price} - $#{sales.max_price}
 
       
       //- div
@@ -32,85 +32,83 @@ block content
         .uk-card.uk-card-default.uk-card-body.uk-padding-medium
           div(uk-slideshow='animation: push')
             .uk-position-relative.uk-visible-toggle.uk-light(tabindex='-1')
-              ul.uk-slideshow-items
+              ul.uk-slideshow-items 
                 li
-                  img(src='images/ticket-sample-1.jpg' alt='' uk-cover='')
+                  img(src=`${sales.item.src_url_public}` alt='' uk-cover='')
                 li
-                  img(src='images/ticket-sample-2.jpg' alt='' uk-cover='')
-                li
-                  img(src='images/ticket-sample.jpg' alt='' uk-cover='')
+                  img(src= `${sales.item.src_url_private}` alt='' uk-cover='')
               a.uk-position-center-left.uk-position-small.uk-hidden-hover(href='#' uk-slidenav-previous='' uk-slideshow-item='previous')
               a.uk-position-center-right.uk-position-small.uk-hidden-hover(href='#' uk-slidenav-next='' uk-slideshow-item='next')
             ul.uk-slideshow-nav.uk-dotnav.uk-flex-center.uk-margin
 
-    // SI SOY EL DUEÑO DE LA SUBASTA...
-    section.uk-section(style="background-color: #fcfcfc")
-      .uk-container
-        h2.uk-text-center Mis lugares elegidos
-        .uk-grid-small.uk-grid-match(class='uk-child-width-1-3@m' uk-grid='')
-            div
-              .uk-card.uk-card-default.uk-card-body.uk-text-center
-                img(src='images/location.svg' alt='' width="80")
-                h3.text-primary.uk-margin-small-bottom Metro Barranca del Muerto
-                h4.text-comfortaa.uk-margin-remove-top 8:00p.m.
-            div
-              .uk-card.uk-card-default.uk-card-body.uk-text-center
-                img(src='images/location.svg' alt='' width="80")
-                h3.text-primary.uk-margin-small-bottom Metro Barranca del Muerto
-                h4.text-comfortaa.uk-margin-remove-top 8:00p.m.
-            div
-              .uk-card.uk-card-default.uk-card-body.uk-text-center
-                img(src='images/location.svg' alt='' width="80")
-                h3.text-primary.uk-margin-small-bottom Metro Barranca del Muerto
-                h4.text-comfortaa.uk-margin-remove-top 8:00p.m.        
-           
-      .uk-flex.uk-flex-center
-        .uk-card.uk-card-body
-          button.uk-button.uk-button-success.uk-align-center Editar subasta
-        .uk-card.uk-card-body.uk-padding-remove-left 
-          button.uk-button.uk-button-danger.uk-align-center Borrar subasta
+    if "user._id" === "sales.userid._id"
+      section.uk-section(style="background-color: #fcfcfc")
+        .uk-container
+          h2.uk-text-center Mis lugares elegidos
+          .uk-grid-small.uk-grid-match(class='uk-child-width-1-3@m' uk-grid='')
+              div
+                .uk-card.uk-card-default.uk-card-body.uk-text-center
+                  img(src='/images/location.svg' alt='' width="80")
+                  h3.text-primary.uk-margin-small-bottom Metro Barranca del Muerto
+                  h4.text-comfortaa.uk-margin-remove-top 8:00p.m.
+              div
+                .uk-card.uk-card-default.uk-card-body.uk-text-center
+                  img(src='/images/location.svg' alt='' width="80")
+                  h3.text-primary.uk-margin-small-bottom Metro Barranca del Muerto
+                  h4.text-comfortaa.uk-margin-remove-top 8:00p.m.
+              div
+                .uk-card.uk-card-default.uk-card-body.uk-text-center
+                  img(src='/images/location.svg' alt='' width="80")
+                  h3.text-primary.uk-margin-small-bottom Metro Barranca del Muerto
+                  h4.text-comfortaa.uk-margin-remove-top 8:00p.m.        
+            
+        .uk-flex.uk-flex-center
+          .uk-card.uk-card-body
+            button.uk-button.uk-button-success.uk-align-center Editar subasta
+          .uk-card.uk-card-body.uk-padding-remove-left 
+            button.uk-button.uk-button-danger.uk-align-center Borrar subasta
           
 
 
-    // SI SOY UN USUARIO INTENTANDO COMPRAR...
-    section.uk-section(style="background-color: #fcfcfc")
-      .uk-container
-        h2.uk-text-center Lugares y horarios disponibles
-        p.uk-text-large.uk-dark.uk-text-center.uk-margin-large-bottom Elige la opción que prefieras para recibir tu boleto
-        form.uk-grid-small.uk-grid-match(class='uk-child-width-1-3@m' uk-grid='')
-            div
-              .uk-card.uk-card-default.uk-card-body
-                .text-primary.uk-margin-small-bottom Opción 1
-                .uk-form-controls.uk-form-controls-text
-                  label
-                    input.uk-radio(type='radio' name='placeoption')
-                    |  Metro Barranca del Muerto - 
-                  span 8:00p.m.
-            div
-              .uk-card.uk-card-default.uk-card-body
-                .text-primary.uk-margin-small-bottom Opción 2
-                .uk-form-controls.uk-form-controls-text
-                  label
-                    input.uk-radio(type='radio' name='placeoption')
-                    |  Taquillas Estadio Azteca - 
-                  span 11:00a.m.
-            div
-              .uk-card.uk-card-default.uk-card-body
-                .text-primary.uk-margin-small-bottom Opción 3
-                .uk-form-controls.uk-form-controls-text
-                  label
-                    input.uk-radio(type='radio' name='placeoption')
-                    |  Museo Dolores Olmedo - 
-                  span 1:00p.m.  
+    else
+      section.uk-section(style="background-color: #fcfcfc")
+        .uk-container
+          h2.uk-text-center Lugares y horarios disponibles
+          p.uk-text-large.uk-dark.uk-text-center.uk-margin-large-bottom Elige la opción que prefieras para recibir tu boleto
+          form.uk-grid-small.uk-grid-match(class='uk-child-width-1-3@m' uk-grid='')
+              div
+                .uk-card.uk-card-default.uk-card-body
+                  .text-primary.uk-margin-small-bottom Opción 1
+                  .uk-form-controls.uk-form-controls-text
+                    label
+                      input.uk-radio(type='radio' name='placeoption')
+                      |  Metro Barranca del Muerto - 
+                    span 8:00p.m.
+              div
+                .uk-card.uk-card-default.uk-card-body
+                  .text-primary.uk-margin-small-bottom Opción 2
+                  .uk-form-controls.uk-form-controls-text
+                    label
+                      input.uk-radio(type='radio' name='placeoption')
+                      |  Taquillas Estadio Azteca - 
+                    span 11:00a.m.
+              div
+                .uk-card.uk-card-default.uk-card-body
+                  .text-primary.uk-margin-small-bottom Opción 3
+                  .uk-form-controls.uk-form-controls-text
+                    label
+                      input.uk-radio(type='radio' name='placeoption')
+                      |  Museo Dolores Olmedo - 
+                    span 1:00p.m.  
 
-        .uk-container.uk-margin-large-top
-          p.uk-text-large.uk-dark.uk-text-center.uk-margin-medium-bottom ¿Cuánto deseas ofrecerle a NOMBRE DE VENDEDOR?
-          .uk-margin.uk-align-center.uk-flex.uk-flex-center(uk-margin='')
-            div(uk-form-custom='target: true')
-              
-              input.uk-input.uk-form-width-large.uk-flex.uk-flex-center(type='number' placeholder='Ingresa la cantidad')
-          
-          button.uk-button.uk-button-secondary.uk-align-center Ofertar
+          .uk-container.uk-margin-large-top
+            p.uk-text-large.uk-dark.uk-text-center.uk-margin-medium-bottom ¿Cuánto deseas ofrecerle a #{sales.userid.username}?
+            .uk-margin.uk-align-center.uk-flex.uk-flex-center(uk-margin='')
+              div(uk-form-custom='target: true')
+                
+                input.uk-input.uk-form-width-large.uk-flex.uk-flex-center(type='number' name="named_price" placeholder='Ingresa la cantidad')
+            
+            button.uk-button.uk-button-secondary.uk-align-center Ofertar
 
               
 

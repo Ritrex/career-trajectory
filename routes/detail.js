@@ -3,20 +3,31 @@ const router = express.Router();
 const User = require("../models/User");
 const Sale = require("../models/Sale");
 const Bid = require("../models/Bid");
+const moment = require("moment");
 
 /* GET home page */
-router.get("/detail", (req, res, next) => {
-  Bid.find()
-    .limit(3)
-    .populate("creatorid")
+router.get("/detail/:id", (req, res, next) => {
+  const { id } = req.params;
+  Sale.findById(id)
     .populate("buyerid")
-    .populate("saleid")
-    .sort({ createdAt: -1 })
-    .then(bids => {
-      console.log(bids);
-      res.render("detail", { bids });
+    .populate("userid")
+    .then(sales => {
+      console.log(sales, "estos son los sales");
+      res.render("detail", { sales, user: req.user, moment });
     })
-    .catch(err => console.log("hay un error en", err));
+    .catch(err => console.log("hay un error en ", err));
+
+  // Bid.find()
+  //   .limit(3)
+  //   .populate("creatorid")
+  //   .populate("buyerid")
+  //   .populate("saleid")
+  //   .sort({ createdAt: -1 })
+  //   .then(bids => {
+  //     console.log(bids);
+  //     res.render("detail", { bids, user: req.user });
+  //   })
+  //   .catch(err => console.log("hay un error en", err));
 
   // let bid = {
   //   creatorid: "5da659dfa134f45c60a5716c",
