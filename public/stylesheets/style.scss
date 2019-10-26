@@ -16,7 +16,13 @@ body {
 a {
   color: rgb(82, 121, 136);
 }
-
+a:hover {
+  text-decoration: none !important;
+}
+a:hover .uk-card {
+  box-shadow: 0 5px 15px rgba(0, 20, 255, 0.4) !important;
+  transition: 0.4s ease-in-out;
+}
 h1,
 h2,
 h3,
