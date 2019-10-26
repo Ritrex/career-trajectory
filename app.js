@@ -47,7 +47,7 @@ app.use(
   cookie:{maxAge:600000},
   store: new MongoStore({
   mongooseConnection: mongoose.connection,
-          ttl: 24 * 60 * 60
+          ttl: 24 * 60 * 60 *1000
   })
 })
 )
