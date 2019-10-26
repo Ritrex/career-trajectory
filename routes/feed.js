@@ -6,6 +6,8 @@ const Bid = require("../models/Bid");
 
 /* GET home page */
 router.get("/feed", (req, res, next) => {
+  if(!req.user)
+    res.redirect("/")
   //Esto es para las cosas random
   let promesamisventas = Sale.findOne({ userid: req.user._id })
     .populate("userid")

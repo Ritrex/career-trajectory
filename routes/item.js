@@ -1,12 +1,31 @@
 const express = require("express");
 const router = express.Router();
+const Bid = require('../models/Bid')
 const Item = require('../models/Item')
+const Sale=require('../models/Sale')
+const User=require('../models/User')
 const mongoose = require('mongoose')
 const uploader = require('../helpers/upload')
 const cloudinary = require('cloudinary')
 const multer=require('multer')
 const multer_cloud=require('multer-storage-cloudinary')
 
+
+router.post('/detail/:saleid',(req,res)=>{
+  const {saleid}=req.params
+  const buyerid=req.user._id
+  const named_price=req.body
+  Bid.create({saleid,buyerid,named_price})
+  .then(succ=>{
+    res.redirect("/")
+  })
+  .catch(error=>{
+    console.log("Unable to bid item",error)
+    res.redirect("/feed")
+  })
+})
+
+/*
 router.get('/item/:itemid',(req,res)=>{
 
 })
@@ -53,5 +72,5 @@ router.post('/item/:itemid/edit',(req,res)=>{
 router.post('/item/:itemid/delete',(req,res)=>{
 
 })
-
+*/
 module.exports=router
