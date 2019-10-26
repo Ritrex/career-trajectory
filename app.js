@@ -119,6 +119,6 @@ app.use("/", auth);
 app.use("/", item);
 app.use("/", profile);
 app.use("/", sales);
-//Ro
+//R
 
 module.exports = app;
