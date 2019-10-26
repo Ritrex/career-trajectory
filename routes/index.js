@@ -26,7 +26,7 @@ router.get("/", (req, res, next) => {
   .then(sales => {
     console.log(sales);
   // res.status(200).json({ sales });
-    res.render("index", { sales,user:req.user });
+    res.render("index", { sales,user:req.user,moment });
   })
   .catch(err => console.log("hay un error en ", err));
   else{
@@ -35,7 +35,7 @@ router.get("/", (req, res, next) => {
     .then(sales => {
       console.log(sales);
     // res.status(200).json({ sales });
-      res.render("index", { sales,user:req.user });
+      res.render("index", { sales,user:req.user,moment });
     })
     .catch(err => console.log("hay un error en ", err));
     else{
@@ -49,16 +49,16 @@ router.get("/", (req, res, next) => {
       Sale.find({associated_categories:{$in:query}})
       .limit(3)
       .then(sales=>{
-        res.render('index',{user:req.user,sales})
+        res.render('index',{user:req.user,sales,moment})
       })
       .catch(error=>{
-        res.render('index',{user:req.user,sales,errormsg:error})
+        res.render('index',{user:req.user,sales,errormsg:error,moment})
       })
     }
 
   }   
     /* Sale.findOne()
-    .populate("userid")
+    .populate("userid")gitg
     .populate("itemid")
     .then(sale => {
       res.render("layout", { sale });

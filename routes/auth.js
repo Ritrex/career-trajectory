@@ -32,7 +32,7 @@ router.post("/signup", upload.single("foto"), (req, res) => {
   } = req.body;
   //let foto=req.files.map(file=>file.secure.url)
   console.log(req.body);
-  if (!email || !password || !conf_password || !name)
+  if (!email || !password || !conf_password || !username)
     res.render("signup", {
       error: "No se proporcionó la información necesaria"
     });
