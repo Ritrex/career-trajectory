@@ -104,13 +104,16 @@ nav {
   font-size: 1.4rem !important;
   font-weight: 800 !important; }
 
+.uk-text-semilarge {
+  font-size: 1.1rem !important; }
+
 .uk-text-small {
-  font-size: 0.75em !important; }
+  font-size: 0.95em !important; }
 
 .uk-form-label {
   color: #352073 !important;
-  font-size: 0.75rem !important;
-  margin-bottom: 5px !important;
+  font-size: 0.95rem !important;
+  margin-bottom: 10px !important;
   display: flex !important; }
 
 .uk-button-secondary {
@@ -129,5 +132,16 @@ nav {
 
 .uk-overlay-primary {
   background: rgba(34, 34, 34, 0.6) !important; }
+
+.uk-button-danger {
+  background: #d20013 !important; }
+
+.uk-button-success {
+  background: #352073 !important;
+  color: #ffffff !important; }
+
+.uk-button-green {
+  background: #07ca04 !important;
+  color: #ffffff !important; }
 
 /*# sourceMappingURL=style.css.map */

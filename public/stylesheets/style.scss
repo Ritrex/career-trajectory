@@ -6,6 +6,8 @@ $white: #ffffff;
 $comfortaa: "Comfortaa";
 $light-grey: #bdbdbd;
 $lighter-grey: #f0f0f0;
+$danger: #d20013;
+$green: #07ca04;
 
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -116,13 +118,16 @@ nav {
   font-size: 1.4rem !important;
   font-weight: 800 !important;
 }
+.uk-text-semilarge {
+  font-size: 1.1rem !important;
+}
 .uk-text-small {
-  font-size: 0.75em !important;
+  font-size: 0.95em !important;
 }
 .uk-form-label {
   color: $primary !important;
-  font-size: 0.75rem !important;
-  margin-bottom: 5px !important;
+  font-size: 0.95rem !important;
+  margin-bottom: 10px !important;
   display: flex !important;
 }
 .uk-button-secondary {
@@ -141,4 +146,15 @@ nav {
 }
 .uk-overlay-primary {
   background: rgba(34, 34, 34, 0.6) !important;
+}
+.uk-button-danger {
+  background: $danger !important;
+}
+.uk-button-success {
+  background: $primary !important;
+  color: $white !important;
+}
+.uk-button-green {
+  background: $green !important;
+  color: $white !important;
 }

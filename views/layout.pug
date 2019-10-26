@@ -15,7 +15,8 @@ html(lang="en")
       .uk-navbar-left
         ul.uk-navbar-nav
           li.uk-active
-            img.logo(src="/images/logo-sc.svg", alt="")(href='/feed')
+            img.logo(src="/images/logo-sc.svg", alt="" href= user ? '/feed' : `/`)
+            
           if user
             li
               a(href='/feed') MI FEED
