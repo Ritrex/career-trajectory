@@ -14,7 +14,7 @@ router.get("/detail", (req, res, next) => {
     .sort({ createdAt: -1 })
     .then(bids => {
       console.log(bids);
-      res.render("detail", { bids });
+      res.render("detail", { bids, user: req.user });
     })
     .catch(err => console.log("hay un error en", err));
 

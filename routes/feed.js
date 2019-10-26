@@ -3,15 +3,26 @@ const router = express.Router();
 const User = require("../models/User");
 const Sale = require("../models/Sale");
 const Bid = require("../models/Bid");
+const moment = require("moment");
+const { isAuth } = require("../helpers/authmiddleware");
 
 /* GET home page */
-router.get("/feed", (req, res, next) => {
+router.get("/feed", isAuth, (req, res, next) => {
   //Esto es para las cosas random
-  let promesamisventas = Sale.findOne({ userid: req.user._id })
-    .populate("userid")
-    .populate("bids");
-
-  let otrasrandom = Sale.find()
+  console.log(req.user);
+  let promesamisventas, otrasrandom, promesaofertas;
+  if (req.user) {
+    promesamisventas = Sale.findOne({ userid: req.user._id })
+      .populate("userid")
+      .populate("bids");
+    promesaofertas = Bid.find({ buyerid: req.user._id })
+      .limit(3)
+      .populate("creatorid")
+      .populate("buyerid")
+      .populate("saleid")
+      .sort({ createdAt: -1 });
+  }
+  otrasrandom = Sale.find()
     .limit(3)
     .populate("userid");
 
@@ -27,19 +38,28 @@ router.get("/feed", (req, res, next) => {
   // })
   // .catch(err => console.log("hay un error en ", err));
   //let promesaofertas=  Bid.find({ $or: [{ buyerid: req.user._id }, { creatorsid: req.user._id }] })
-  let promesaofertas = Bid.find({ buyerid: req.user._id })
-    .limit(3)
-    .populate("creatorid")
-    .populate("buyerid")
-    .populate("saleid")
-    .sort({ createdAt: -1 });
 
   Promise.all([promesamisventas, otrasrandom, promesaofertas])
     .then(valores => {
       let misvent = valores[0];
       let otrasrand = valores[1];
       let misofer = valores[2];
-      res.render("feed", { misvent, misofer, otrasrand, user: req.user });
+      console.log(
+        "mis promesas",
+        "mis ventas",
+        misvent,
+        "cosas random",
+        otrasrand,
+        "a las que he ofertado",
+        misofer
+      );
+      res.render("feed", {
+        misvent,
+        misofer,
+        otrasrand,
+        user: req.user,
+        moment: moment
+      });
     })
     .catch(err => {
       res.redirect("/error");

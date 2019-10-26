@@ -30,6 +30,11 @@ p {
 img.logo {
   width: 200px; }
 
+.third {
+  width: 30.333% !important;
+  display: inline-block;
+  margin-right: 3%; }
+
 .logo-footer {
   padding: 10px;
   padding-left: 5px;

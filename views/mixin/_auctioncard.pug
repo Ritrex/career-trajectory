@@ -13,7 +13,7 @@ mixin auctioncard(sale)
         h3.uk-card-title.uk-text-left.uk-margin-small-bottom  #{sale.name}
 
 
-        p.uk-margin-remove-top.uk-margin-small-bottom.uk-text-left #{sale.item.event_date}
+        p#event-date.uk-margin-remove-top.uk-margin-small-bottom.uk-text-left #{moment(sale.item.event_date).format('DD-MM-YYYY')}
         h3.uk-card-title.uk-text-left.uk-margin-remove-top.uk-margin-small-bottom.money $#{sale.min_price} - $#{sale.max_price}
         h5.uk-margin-remove-top.uk-text-left.uk-margin-small-bottom
           time(datetime='2016-04-01T19:00') #{sale.arena}
@@ -22,6 +22,7 @@ mixin auctioncard(sale)
           .uk-width-auto 
             img.uk-border-circle(width='60' height='60' src='/images/man.png')
           .uk-width-expand.uk-text-left
-            p.uk-text.uk-margin-small-bottom Nombre del vendedor
-            //#{sale.userid.username}
+            p.uk-text.uk-margin-small-bottom NOMBRE USUARIO
+            //-#{sale.userid.username}
             span.uk-label Vendedor
+            
