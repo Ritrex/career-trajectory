@@ -1,36 +1,88 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
-const multer = require('multer')
-const passport = require('passport')
-const bcrypt = require('bcryptjs')
-const bcryptsalt = 10
+const Sale = require("../models/Sale");
+const multer = require("multer");
+const passport = require("../helpers/auth");
+const cloudinary = require("cloudinary");
+const mult_cloud = require("multer-storage-cloudinary");
+const bcrypt = require("bcryptjs");
 
+const upload = require("../helpers/upload");
 
-const upload=require('../helpers/upload')
 //Missing: Make sure user is no logged in
-router.get('/signup',(req,res)=>{
-  res.render('signup')
-})
+router.get("/signup", (req, res) => {
+  console.log(req.user);
+  if (!req.user) res.render("signup", { issignup: true });
+  else {
+    res.redirect("/");
+  }
+});
 
-router.post('/signup',(req,res)=>{
-  let {username,password}=req.body
-  
-  res.redirect('/')
-})
+router.post("/signup", upload.single("foto"), (req, res) => {
+  let {
+    username,
+    password,
+    conf_password,
+    email,
+    telefono,
+    rfc,
+    domicilio,
+    intereses
+  } = req.body;
+  //let foto=req.files.map(file=>file.secure.url)
+  console.log(req.body);
+  if (!email || !password || !conf_password || !name)
+    res.render("signup", {
+      error: "No se proporcionó la información necesaria"
+    });
+  if (password !== conf_password) res.render("signup", { error: "" });
+  //VAlidación aquí
 
-router.get('/login',(req,res)=>{
-  let {username,password}=req.body
+
+
+  User.register({ username, email }, password)
+    .then(succ => {
+      console.log("SUCCESS!", succ);
+      res.redirect("/login");
+      //res.render("index", { user: succ });
+    })
+    .catch(error => {
+      console.log("fallo al insertar", error);
+      res.render("signup");
+    });
+  //User.create({username,password,conf_password,telefono,rfc,domicilio,intereses})
+});
+
+router.get("/login", (req, res) => {
   //req.isAuthenticated()
-  res.render('login')
-})
 
-router.post('/login',(req,res)=>{
-  let{password,username}=req.body
+  res.render("login", { user: req.user });
+});
 
-  User.findOne({username})
-  .then()
-  .catch()
-})
+router.post("/login", (req, res) => {
+  //passport.authenticate
+  //req.use={username:name,password}
+  //console.log(passport.)
+  console.log('esto ',req.body)
+  passport.authenticate("local", (err, user, info = {}) => {
+    const { message: errorMessage } = info;
+    console.log("logged ", err, user, info);
+    if (errorMessage) {
+      console.log("error ", errorMessage);
+      return res.render("login", { errorMessage });
+    }
 
-module.exports=router;
+    req.login(user, err => {
+      console.log("logged in succesfully", user);
+
+      res.redirect("/feed");
+    });
+  })(req, res);
+});
+
+router.get("/logout", (req, res) => {
+  req.logout();
+  res.redirect("/login");
+});
+module.exports = router;

@@ -1,9 +1,13 @@
-$primary: #900ca9;
-$darker: #3b0b44;
+$primary: #352073;
+$blue-darker: #261c48;
+$secondary: #f45905;
+$orange-light: #fb9224;
 $white: #ffffff;
 $comfortaa: "Comfortaa";
-$light-grey: #cbcbcb;
-$lighter-grey: #f9f9f9;
+$light-grey: #bdbdbd;
+$lighter-grey: #f0f0f0;
+$danger: #d20013;
+$green: #07ca04;
 
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -21,21 +25,45 @@ h5,
 h6 {
   font-family: "Patua One", cursive !important;
 }
+h2 {
+  font-size: 2.3rem !important;
+}
+h5 time {
+  color: $blue-darker !important;
+}
 p {
   font-family: "Comfortaa", cursive !important;
   line-height: 1.8em;
 }
-label {
-  font-family: "Comfortaa", cursive !important;
+.logo {
+  padding: 20px;
+  padding-left: 10px;
+  border-left: 8px solid $secondary;
+}
+img.logo {
+  width: 200px;
+}
+.logo-footer {
+  padding: 10px;
+  padding-left: 5px;
+  border-left: 3px solid $secondary;
+}
+img.logo-footer {
+  width: 130px;
+}
+label,
+.text-comfortaa {
+  font-family: "Comfortaa" !important;
 }
 footer {
-  background-color: $darker !important;
+  background-color: $primary !important;
 }
 nav {
   display: flex;
   justify-content: space-around;
 }
-#benefits {
+#benefits,
+#related {
   background-color: $lighter-grey;
 }
 #no-user-nav {
@@ -59,6 +87,14 @@ nav {
 .star-off {
   fill: $light-grey;
 }
+.text-primary {
+  color: $primary !important;
+}
+.money {
+  color: $secondary !important;
+  font-weight: bolder !important;
+  font-family: "Comfortaa", cursive !important;
+}
 .new-auct-instructions,
 .new-auct-instructions p,
 .new-auct-instructions a {
@@ -79,14 +115,46 @@ nav {
   font-weight: 600;
 }
 .uk-text-large {
-  font-size: 1.2rem !important;
+  font-size: 1.4rem !important;
+  font-weight: 800 !important;
+}
+.uk-text-semilarge {
+  font-size: 1.1rem !important;
 }
 .uk-text-small {
-  font-size: 0.75em !important;
+  font-size: 0.95em !important;
 }
 .uk-form-label {
   color: $primary !important;
-  font-size: 0.75rem !important;
-  margin-bottom: 5px !important;
+  font-size: 0.95rem !important;
+  margin-bottom: 10px !important;
   display: flex !important;
+}
+.uk-button-secondary {
+  background-color: $secondary !important;
+  color: $white !important;
+  font-weight: bolder !important;
+}
+.uk-card-title {
+  font-size: 1.6rem !important;
+}
+.uk-label {
+  background-color: $primary !important;
+  font-family: $comfortaa !important;
+  font-weight: 900 !important;
+  padding: 4px 9px !important;
+}
+.uk-overlay-primary {
+  background: rgba(34, 34, 34, 0.6) !important;
+}
+.uk-button-danger {
+  background: $danger !important;
+}
+.uk-button-success {
+  background: $primary !important;
+  color: $white !important;
+}
+.uk-button-green {
+  background: $green !important;
+  color: $white !important;
 }

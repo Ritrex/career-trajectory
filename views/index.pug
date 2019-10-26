@@ -5,19 +5,19 @@ include mixin/_auctioncard
 block content
 
   .uk-position-relative.uk-visible-toggle.uk-light(tabindex='-1' uk-slideshow='ratio: false;animation: push')
-    ul.uk-slideshow-items(uk-height-viewport="offset-top: true")
+    ul.uk-slideshow-items(uk-height-viewport="offset-top: true")  
       li
         video(src='https://res.cloudinary.com/dr95kad7s/video/upload/v1571461370/slideshow-video-1.mp4' autoplay='' loop='' muted='' playsinline='' uk-cover='')
         .uk-overlay-primary.uk-position-cover
         .uk-position-center.uk-position-small.uk-text-center
           h1(uk-slideshow-parallax='y: -50,0,0; opacity: 1,1,0') Más fácil de lo que crees
           p.uk-text-large.uk-margin-medium-bottom(uk-slideshow-parallax='y: 50,0,0; opacity: 1,1,0') Si no puedes ir, véndelo. Si te hace falta, cómpralo. Así de fácil.
-          form(action='POST' uk-slideshow-parallax='y: 150,0,0; opacity: 1,1,0')
+          form(action='/' metod="post" uk-slideshow-parallax='y: 150,0,0; opacity: 1,1,0')
             fieldset.uk-fieldset
               .uk-margin
                 .uk-inline
                   a.uk-form-icon.uk-form-icon-flip(href='#' uk-icon='icon: search')
-                  input.uk-input.uk-form-width-large(type='text' placeholder='Conciertos, partidos, teatro, festivales y más...')
+                  input.uk-input.uk-form-width-large(type='text' name='search' placeholder='Conciertos, partidos, teatro, festivales y más...')
 
 
       li
@@ -26,14 +26,15 @@ block content
         .uk-position-center.uk-position-small.uk-text-center
           h1(uk-slideshow-parallax='y: -50,0,0; opacity: 1,1,0') Vende rápido
           p.uk-text-large(uk-slideshow-parallax='y: 50,0,0; opacity: 1,1,0') Recupera el dinero que invertiste y déjate de preocupaciones
-          button.uk-button.uk-button-danger(uk-slideshow-parallax='y: 150,0,0; opacity: 1,1,0') Vender   
+          a.uk-button.uk-button-secondary(uk-slideshow-parallax='y: 150,0,0; opacity: 1,1,0' href='/login') Vender  
+ 
       li
         video(src='https://res.cloudinary.com/dr95kad7s/video/upload/v1571461298/slideshow-video-3.mp4' autoplay='' loop='' muted='' playsinline='' uk-cover='')
         .uk-overlay-primary.uk-position-cover
         .uk-position-center.uk-position-small.uk-text-center
           h1(uk-slideshow-parallax='y: -50,0,0; opacity: 1,1,0') Compra fácil
-          p.uk-text-large(uk-slideshow-parallax='y: 50,0,0; opacity: 1,1,0') Adquierelo de manera segura sin miedo a revendedores
-          button.uk-button.uk-button-danger(uk-slideshow-parallax='y: 150,0,0; opacity: 1,1,0') Comprar   
+          p.uk-text-large(uk-slideshow-parallax='y: 50,0,0; opacity: 1,1,0') Adquiérelo de manera segura sin miedo a revendedores
+          a.uk-button.uk-button-secondary(uk-slideshow-parallax='y: 150,0,0; opacity: 1,1,0' href='/login') Comprar   
 
     a.uk-position-center-left.uk-position-small.uk-hidden-hover(href='#' uk-slidenav-previous='' uk-slideshow-item='previous')
     a.uk-position-center-right.uk-position-small.uk-hidden-hover(href='#' uk-slidenav-next='' uk-slideshow-item='next')
@@ -41,13 +42,11 @@ block content
   section.uk-section
     .uk-container
       h2.uk-text-center Gran variedad de eventos
-      p.uk-text-large.uk-dark.uk-text-center Encuentra el evento, artista o recinto que más te interese 
+      p.uk-text-large.uk-dark.uk-text-center.uk-margin-large-bottom Encuentra el evento, artista o recinto que más te interese 
       .uk-grid.uk-grid-medium.uk-text-center(class='uk-child-width-expand@s' uk-grid='')
-
-        +auctioncard()
-        +auctioncard()
-        +auctioncard()
-
+      if sales
+        each sale in sales
+          +auctioncard(sale)
         
         
   section#benefits.uk-section.uk-padding-large
@@ -57,20 +56,20 @@ block content
           div
             .uk-card.uk-card-default.uk-card-hover.uk-card-body.uk-text-center
               img(src="/images/search.svg" width="80" alt="Busca eventos" uk-svg)
-              h3.uk-card-title Busca
+              h3.uk-card-title.text-primary Busca
               p Encuentra el evento que desees, entre conciertos, eventos deportivos, teatro y más.
           div
             .uk-card.uk-card-default.uk-card-hover.uk-card-body.uk-text-center
               img(src="/images/bank.svg" width="80" alt="Busca eventos" uk-svg)
-              h3.uk-card-title Oferta
+              h3.uk-card-title.text-primary  Oferta
               p Ofrece al vendedor una cantidad justa por su boleto, sin sobrepasar su precio original.
           div
             .uk-card.uk-card-default.uk-card-hover.uk-card-body.uk-text-center
               img(src="/images/tickets.svg" width="80" alt="Busca eventos" uk-svg)
-              h3.uk-card-title Intercambia
+              h3.uk-card-title.text-primary Intercambia
               p Elige de entre las opciones el mejor lugar y horario para recibir tu boleto.
 
-
+  script(src="/javascripts/searchbar.js")
   // h1 #{title}
   // p=`Welcome ${user?user.name:`to ${title}`}`
   // img(src=`${img}`, alt="")

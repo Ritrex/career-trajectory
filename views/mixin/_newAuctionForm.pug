@@ -1,10 +1,10 @@
-mixin newAuctionForm()
+mixin newAuctionForm(data)
 
-  form(action=register ? "/signup" : "/login" class="uk-grid-small uk-margin-large-top uk-margin-large-bottom" uk-grid method="post")
+  form(action="/newAuction" class="uk-grid-small uk-margin-large-top uk-margin-large-bottom" uk-grid method="post")
 
     .uk-margin.uk-width-1-1.new-auct-instructions
-      h4.uk-margin-remove-bottom 1. Comparte los datos del evento
-      p Revisa tu boleto y coloca los datos que vienen en él.
+      h3.uk-margin-remove-bottom 1. Comparte los datos del evento
+      p.uk-text-semilarge Revisa tu boleto y coloca los datos que vienen en él.
 
     .uk-margin.uk-width-1-1
       label(class="uk-form-label" for="event") Nombre del evento
@@ -13,95 +13,150 @@ mixin newAuctionForm()
         input.uk-input(type='text' name="event")
 
     .uk-margin.uk-width-1-2
-      label(class="uk-form-label" for="event-date") Fecha del evento
+      label(class="uk-form-label" for="event_date") Fecha del evento
       .uk-inline.uk-width-1-1
         span.uk-form-icon(uk-icon='icon: user')
-        input.uk-input(type='date' name="event-date")
+        input.uk-input(type='date' name="event_date")
 
     .uk-margin.uk-width-1-2
-      label(class="uk-form-label" for="event-arena") Recinto del evento
+      label(class="uk-form-label" for="event_arena") Recinto del evento
       .uk-inline.uk-width-1-1
         span.uk-form-icon(uk-icon='icon: user')
-        input.uk-input(type='text' name="event-arena")
+        input.uk-input(type='text' name="event_arena")
 
     .uk-margin.uk-width-1-2
-      label(class="uk-form-label" for="min-price") Oferta mínima
+      label(class="uk-form-label" for="min_price") Oferta mínima
       .uk-inline.uk-width-1-1
         span.uk-form-icon(uk-icon='icon: user')
-        input.uk-input(type='number' name="min-price")
+        input.uk-input(type='number' name="min_price")
 
     .uk-margin.uk-width-1-2
-      label(class="uk-form-label" for="max-price") Oferta máxima*
+      label(class="uk-form-label" for="max_price") Oferta máxima*
       .uk-inline.uk-width-1-1
         span.uk-form-icon(uk-icon='icon: user')
-        input.uk-input(type='number' name="max-price")    
+        input.uk-input(type='number' name="max_price")    
 
     .uk-margin.uk-margin-remove-top.uk-width-1-1
       p.uk-text-small.uk-text-primary *La oferta máxima que puedes recibir por tu boleto es la de su costo original
 
     .uk-margin.uk-width-1-1.new-auct-instructions
-      h4.uk-margin-remove-bottom 2. Coloca tres lugares donde te gustaría realizar el intercambio
-      p.uk-margin-remove-top
-      | Localiza las ubicaciones 
-      a(href='https://www.google.com.mx/maps/@19.3809121,-99.1500391,17z' class="uk-text-bold") aquí
-      | , copia el link de cada uno y pégalo en el formulario.
+      h3.uk-margin-remove-bottom 2. Coloca los lugares donde te gustaría intercambiar
+      p.uk-text-semilarge Asegúrate de tener disponibilidad y ser puntual al ver a tu comprador.
+      //- | Localiza las ubicaciones 
+      //- a(href='https://www.google.com.mx/maps/@19.3809121,-99.1500391,17z' class="uk-text-bold") aquí
+      //- | , copia el link de cada uno y pégalo en el formulario.
 
-    .uk-margin.uk-width-1-3
+    .uk-margin.uk-width-1-2
+      label(class="uk-form-label" for="place_one") Primer opción (lugar)
       .uk-inline.uk-width-1-1
         span.uk-form-icon(uk-icon='icon: user')
-        input.uk-input(type='text' name="place-one") 
+        input.uk-input(type='text' name="place_one" placeholder="Lugar")
 
-    .uk-margin.uk-width-1-3
+    .uk-margin.uk-width-1-2
+      label(class="uk-form-label" for="time_one") Primer opción (horario)
       .uk-inline.uk-width-1-1
         span.uk-form-icon(uk-icon='icon: user')
-        input.uk-input(type='text' name="place-two")  
+        input.uk-input(type='time' name="time_one" placeholder="Horario")
 
-    .uk-margin.uk-width-1-3
+    .uk-margin.uk-width-1-2
+      label(class="uk-form-label" for="place_two") Segunda opción (lugar)
       .uk-inline.uk-width-1-1
         span.uk-form-icon(uk-icon='icon: user')
-        input.uk-input(type='text' name="place-three")  
+        input.uk-input(type='text' name="place_two" placeholder="Lugar")
+
+    .uk-margin.uk-width-1-2
+      label(class="uk-form-label" for="time_two") Segunda opción (horario)
+      .uk-inline.uk-width-1-1
+        span.uk-form-icon(uk-icon='icon: user')
+        input.uk-input(type='time' name="time_two" placeholder="Horario")
+
+    .uk-margin.uk-width-1-2
+      label(class="uk-form-label" for="place_three") Tercer opción (lugar)
+      .uk-inline.uk-width-1-1
+        span.uk-form-icon(uk-icon='icon: user')
+        input.uk-input(type='text' name="place_three" placeholder="Lugar")
+
+    .uk-margin.uk-width-1-2
+      label(class="uk-form-label" for="time_three")  Tercer opción (horario)
+      .uk-inline.uk-width-1-1
+        span.uk-form-icon(uk-icon='icon: user')
+        input.uk-input(type='time' name="time_three" placeholder="Horario")        
+        
+        
+
+
         
     .uk-margin.uk-width-1-1.new-auct-instructions
-      h4.uk-margin-remove-bottom 3. Elige tres horarios disponibles para el intercambio
-      p Asegúrate de tener disponibilidad y ser puntual al ver a tu comprador.
+      h3.uk-margin-remove-bottom 3. Sube la foto de tu boleto y del evento
+      p.uk-text-semilarge Toma fotos claras y legibles para que los interesados aseguren su validez.
 
-    .uk-margin.uk-width-1-3
-      .uk-inline.uk-width-1-1
-        span.uk-form-icon(uk-icon='icon: user')
-        input.uk-input(type='time' name="place-one") 
+    //- .uk-margin.uk-width-1-3
+    //-   .uk-inline.uk-width-1-1
+    //-     span.uk-form-icon(uk-icon='icon: user')
+    //-     input.uk-input(type='time' name="place_one") 
 
-    .uk-margin.uk-width-1-3
-      .uk-inline.uk-width-1-1
-        span.uk-form-icon(uk-icon='icon: user')
-        input.uk-input(type='time' name="place-two")  
+    //- .uk-margin.uk-width-1-3
+    //-   .uk-inline.uk-width-1-1
+    //-     span.uk-form-icon(uk-icon='icon: user')
+    //-     input.uk-input(type='time' name="place_two")  
 
-    .uk-margin.uk-width-1-3
-      .uk-inline.uk-width-1-1
-        span.uk-form-icon(uk-icon='icon: user')
-        input.uk-input(type='time' name="place-three")  
+    //- .uk-margin.uk-width-1-3
+    //-   .uk-inline.uk-width-1-1
+    //-     span.uk-form-icon(uk-icon='icon: user')
+    //-     input.uk-input(type='time' name="place_three")  
 
-    .uk-margin.uk-width-1-1.new-auct-instructions
-      h4.uk-margin-remove-bottom 4. Sube la foto de tu boleto 
-      p Toma fotos claras e iluminadas de tu boleto.
+    .uk-margin.uk-width-1-3(uk-margin='')
+      div(uk-form-custom='target: true')
+        input(type='file')
+        input.uk-input.uk-form-width-medium(type='text' placeholder='Foto de evento' disabled='')
 
-    .uk-margin.uk-width-1-2
-      label(class="uk-form-label" for="ticket-full") Imagen completa de tu boleto
-      .uk-inline.uk-width-1-1
-        span.uk-form-icon(uk-icon='icon: image')
-        input.uk-input(type='file' name="ticket-full")
+    .uk-margin.uk-width-1-3(uk-margin='')
+      div(uk-form-custom='target: true')
+        input(type='file')
+        input.uk-input.uk-form-width-medium(type='text' placeholder='Boleto completo' disabled='')
+    .uk-margin.uk-width-1-3(uk-margin='')
+      div(uk-form-custom='target: true')
+        input(type='file')
+        input.uk-input.uk-form-width-medium(type='text' placeholder='Detalle de boleto' disabled='')
+   
 
-    .uk-margin.uk-width-1-2
-      label(class="uk-form-label" for="ticket-full") Imagen completa de tu boleto
-      .uk-inline.uk-width-1-1
-        span.uk-form-icon(uk-icon='icon: image')
-        input.uk-input(type='file' name="ticket-full")    
+      
+
+    //- .uk-margin.uk-width-1-3
+    //-   label(class="uk-form-label" for="ticket_full") Imagen completa de tu boleto
+    //-   .uk-inline.uk-width-1-1
+    //-     span.uk-form-icon(uk-icon='icon: image')
+    //-     input.uk-input(type='file' name="ticket_full")
+
+    //- .uk-margin.uk-width-1-3
+    //-   label(class="uk-form-label" for="ticket_partial") Detalle de tu boleto
+    //-   .uk-inline.uk-width-1-1
+    //-     span.uk-form-icon(uk-icon='icon: image')
+    //-     input.uk-input(type='file' name="ticket_partial")   
+
+    //- .uk-margin.uk-width-1-3
+    //-   label(class="uk-form-label" for="ticket_generic") Imagen del evento
+    //-   .uk-inline.uk-width-1-1
+    //-     span.uk-form-icon(uk-icon='icon: image')
+    //-     input.uk-input(type='file' name="ticket_generic")        
           
 
     if errorMessage
       .uk-alert-danger.uk-width-1-1(uk-alert)
         p #{errorMessage}
         
-    button.uk-button.uk-width-1-3.uk-align-center.uk-button-danger(type="submit") Crear subasta
+    .uk-align-center
+      button.uk-button.uk-align-center.uk-button-green(type="submit") Crear subasta
+
+    .uk-align-center
+      button.uk-button.uk-button-success(type="submit") Editar subasta
+      button.uk-button.uk-button-danger(type="submit") Borrar subasta
+
+    //- .uk-flex.uk-flex-center
+    //-     .uk-card.uk-card-body.uk-width-1-2
+    //-       button.uk-button.uk-button-success.uk-align-center Editar subasta
+    //-     .uk-card.uk-card-body.uk-width-1-2
+    //-       button.uk-button.uk-button-danger.uk-align-center Borrar subasta
 
 
 

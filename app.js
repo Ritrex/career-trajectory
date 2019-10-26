@@ -4,16 +4,12 @@ const bodyParser   = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express      = require('express');
 const favicon      = require('serve-favicon');
-const pug          = require('pug');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
-const express_session=require('express-session')
-const passport     = require('passport')
-const passport_local = require('passport-local')
-const passport_local_mongoose=require('passport-local-mongoose')
-const MongoStore = require("connect-mongo")(express_session);
-const User=require('./models/User')
+const session=require('express-session')
+const passport     = require('./helpers/auth')
+const MongoStore = require("connect-mongo")(session);
 
 
 mongoose
@@ -43,6 +39,21 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+app.use(
+  session({
+  secret:process.env.SECRET,
+  resave:true,
+  saveUninitialized:true,
+  cookie:{maxAge:600000},
+  store: new MongoStore({
+  mongooseConnection: mongoose.connection,
+          ttl: 24 * 60 * 60
+  })
+})
+)
+app.use(passport.initialize())
+app.use(passport.session())
+
 // Express View engine setup
 
 app.use(
@@ -61,6 +72,7 @@ app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 // default value for title local
 app.locals.title = "Express - Generated with IronGenerator";
 
+<<<<<<< HEAD
 app.use(express_session({
   secret:process.env.SECRET,
   resave:true,
@@ -87,6 +99,9 @@ app.use(passport.session())
 //     
 //   })
 // );
+=======
+
+>>>>>>> 20e4b813cc1717330bed19efb7ecc036dc7f8312
 
 const index = require("./routes/index");
 const newAuct = require("./routes/newAuction");
@@ -94,7 +109,7 @@ const auctDetail = require("./routes/detail");
 const feed = require("./routes/feed");
 const auth = require("./routes/auth");
 const item = require("./routes/item");
-const profile = require("./routes/perfil");
+const profile = require("./routes/profile");
 const sales = require("./routes/sales");
 app.use("/", index);
 app.use("/", newAuct);
@@ -104,5 +119,6 @@ app.use("/", auth);
 app.use("/", item);
 app.use("/", profile);
 app.use("/", sales);
+//Ro
 
 module.exports = app;

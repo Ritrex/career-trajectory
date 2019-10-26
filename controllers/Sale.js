@@ -1,21 +1,23 @@
 
 const Sale=require('../models/Sale')
 
-exports.createSale=(req,res)=>{
+module.exports.createSale=(req,res)=>{
   let {prefered_locations,end_date,itemid,userid}=req.body
-   Sale.create({prefered_locations,end_date,itemid,userid})
+  let item = createItem(req,res)
+   Sale.create({prefered_locations,end_date,item,userid})
   .then(sucess=>{
+    sucess.item=item
     res.redirect('/perfil')
   })
   .catch(error=>{
-    res.render('perfil',error)
+    res.render('perfil')
   })
 }
 
-exports.deleteSale=(req,res)=>{
+module.exports.deleteSale=(req,res)=>{
   let {id}=req.params
   Sale.findByIdAndDelete(id).then(success=>{
-    res.render('perfil')
+    res.redirect('/perfil')
   })
   .then(error=>{
     res.redirect('/perfil')
@@ -23,16 +25,16 @@ exports.deleteSale=(req,res)=>{
 
 }
 
-exports.updateSale=(req,res)=>{
+module.exports.updateSale=(req,res)=>{
   let {id}=req.params
   let Sale1 = Sale.findByIdAndUpdate(id,{$set:req.body},{new:true})
   .then(Sale=>
-    res.render('perfil',{Sale:Sale})
+    res.redirect('/perfil')
     )
 }
 
 
-exports.getSale=(req,res)=>{
+module.exports.getSale=(req,res)=>{
   let {id}=req.params
   Sale.findById(id)
   .then(foundSale=>{
@@ -41,4 +43,13 @@ exports.getSale=(req,res)=>{
   .catch(error=>{
     return undefined
   })
+}
+
+
+module.exports.getRandomSales=()=>{
+  return Sale.find()
+    .limit(3)
+    .populate("userid")
+    .sort({ createdAt: -1 })
+    
 }
