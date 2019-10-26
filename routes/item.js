@@ -13,11 +13,22 @@ const multer_cloud=require('multer-storage-cloudinary')
 
 router.post('/detail/:saleid',(req,res)=>{
   const {saleid}=req.params
-  const buyerid=req.user._id
-  const named_price=req.body
-  Bid.create({saleid,buyerid,named_price})
+  req.body.buyerid=req.user._id
+  
+  Bid.create({saleid,...req.body})
   .then(succ=>{
-    res.redirect("/")
+    console.log("Bided successfully",succ)
+    Sale.findByIdAndUpdate(saleid,{$push:{bids:succ._id}})
+    .then(()=>{
+      res.redirect("/feed")
+    })
+    .catch(err=>{
+      console.log("Unable to place bid on sale",
+      err)
+      res.redirect("/")
+    })
+  
+  
   })
   .catch(error=>{
     console.log("Unable to bid item",error)
