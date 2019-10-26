@@ -17,7 +17,7 @@ block content
       h2.uk-text-center Te puede interesar
       p.uk-text-large.uk-dark.uk-text-center.uk-margin-large-bottom Te recomendamos eventos relacionados con tus últimas búsquedas
       .uk-grid.uk-grid-medium.uk-text-center(class='uk-child-width-expand@s' uk-grid='' uk-height-match='target: .uk-card')
-      
+      if otrasrand
         each sale in otrasrand
           +auctioncard(sale)
   if bids        
