@@ -1,6 +1,9 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
+.card-img img {
+  width: 100%; }
+
 a {
   color: #527988; }
 
@@ -102,6 +105,20 @@ nav {
 
 .new-auct-instructions a {
   color: #352073; }
+
+.container-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9; }
+
+.container-img img {
+  height: 300px !important; }
+
+.avatar {
+  display: flex;
+  align-items: center;
+  margin-top: 70%; }
 
 /* UIKIT styles tropicalized */
 .uk-navbar-container {

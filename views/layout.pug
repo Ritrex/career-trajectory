@@ -15,22 +15,23 @@ html(lang="en")
         ul.uk-navbar-nav
           li.uk-active
             img.logo(src="/images/logo-sc.svg", alt="" href= user ? '/feed' : `/`)
-            
-          if user
-            li
-              a(href='/feed') MI FEED
+        
       .uk-navbar-right
         ul.uk-navbar-nav
           if user
-            li #{user.username}
-            
-            li 
-              a(href=`/newAuction/new`) Vender
+            li
+                a(href='/feed') MI FEED        
+            li
+              a.uk-margin-small-right(href=`/newAuction/new`) Vender
             
             li
-              a(href=`/profile/${user._id}`) Usuario
+              img.uk-border-circle.uk-flex.uk-flex-column.uk-flex-middle.avatar(width='30' height='30' src='/images/man.png')  
+              //-a(href=`/profile/${user._id}`) #{user.username}
+
             li
-              a(href='/logout') Logout 
+              a(href=`/profile/${user._id}`) Mi perfil
+            li
+              a(href='/logout' uk-icon='icon: sign-out')
           else
             li
               a(href="/login") Login

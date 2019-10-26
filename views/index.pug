@@ -43,12 +43,14 @@ block content
     .uk-container
       h2.uk-text-center Gran variedad de eventos
       p.uk-text-large.uk-dark.uk-text-center.uk-margin-large-bottom Encuentra el evento, artista o recinto que más te interese 
-      .uk-grid.uk-grid-medium.uk-text-center(class='uk-child-width-expand@s' uk-grid='' uk-height-match='target: .uk-card') 
+      //-.uk-grid.uk-grid-medium.uk-text-center(class='uk-child-width-1-3' uk-grid='' uk-height-match='target: .uk-card') 
+      .uk-grid-small.uk-grid-match(class='uk-child-width-1-3@m' uk-grid='')  
+ 
 
         //-.uk-grid.uk-grid-medium.uk-text-center(class='uk-child-width-expand@s' uk-grid='')
-        if sales
-          each sale in sales
-            +auctioncard(sale)
+      if sales
+        each sale in sales
+          +auctioncard(sale)
         
         
   section#benefits.uk-section.uk-padding-large

@@ -4,11 +4,11 @@ mixin auctioncard(sale)
   - var limitRate = 4;
   - var i = 1;
 
-  a(href=`/detail/${sale._id}`)
+  a.third(href=`/detail/${sale._id}`)
     div.uk-margin-small-top
       .uk-card.uk-card-default
-        .uk-card-media-top
-          img(src=`${sale.item.src_url_public}` alt='')
+        .uk-card-media-top.container-img
+          img.uk-flex.uk-flex-center(src=`${sale.item.src_url_public}` alt='' height='100')
         .uk-card-body
           h3.uk-card-title.uk-text-left.uk-margin-small-bottom  #{sale.name}
 
