@@ -23,7 +23,8 @@ html(lang="en")
       .uk-navbar-right
         ul.uk-navbar-nav
           if user
-            p Juanito Pérez
+            li
+              #{user.username}
             if infeed
               li 
                 a(href=`/newAuction/new`) Vender
