@@ -2,11 +2,7 @@ const mongoose = require("mongoose");
 const { Schema, model } = mongoose;
 
 const bidSchema = new Schema({
-  creatorid: {
-    type: Schema.Types.ObjectId,
-    required: true,
-    ref: "User"
-  },
+
 
   buyerid: {
     type: Schema.Types.ObjectId,
@@ -23,6 +19,6 @@ const bidSchema = new Schema({
     type: Number,
     required: true
   }
-});
+},{timestamps:true});
 
 module.exports = model("Bid", bidSchema);

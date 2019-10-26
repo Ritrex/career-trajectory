@@ -51,10 +51,6 @@ const salesSchema = new Schema(
       type: String,
       required: true
     },
-    arena: {
-      type: String,
-      required: true
-    },
     prefered_locations: {
       type: [
         {
